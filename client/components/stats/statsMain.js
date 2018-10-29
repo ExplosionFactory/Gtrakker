@@ -3,5 +3,5 @@ angular.module('app')
   bindings: {
   },
   controller: function() {},
-  templateUrl: 'templates/statsMain.html'
+  templateUrl: 'templates/stats/statsMain.html'
 });
