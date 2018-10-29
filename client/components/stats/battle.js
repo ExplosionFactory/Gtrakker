@@ -3,5 +3,5 @@ angular.module('gtrak')
   bindings: {
   },
   controller: function() {},
-  templateUrl: ''
+  templateUrl: 'templates/stats/battle.html'
 });

@@ -1,7 +1,7 @@
-var gtrak = angular.module('gtrak')
+angular.module('gtrak')
 .component('fort', {
   bindings: {
   },
   controller: function() {},
-  templateUrl: ''
+  templateUrl: 'templates/stats/fort.html'
 });

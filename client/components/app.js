@@ -1,6 +1,6 @@
 angular.module('gtrak')
 .component('app', {
   bindings: {},
-  templateUrl: 'templates/main.html'
+  templateUrl: 'templates/app.html'
 }).controller('MainCtrl', function() {
 })
