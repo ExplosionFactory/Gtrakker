@@ -1,4 +1,4 @@
-angular.module('app')
+var gtrak = angular.module('gtrak')
 .component('fort', {
   bindings: {
   },
