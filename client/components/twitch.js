@@ -1,5 +1,5 @@
 angular.module('app')
-.component('battle', {
+.component('twitch', {
   bindings: {
   },
   controller: function() {},
