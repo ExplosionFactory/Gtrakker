@@ -1,6 +1,6 @@
 angular.module('app')
 .component('main', {
   bindings: {},
-  templateUrl: ''
+  templateUrl: 'templates/main.html'
 }).controller('MainCtrl', function() {
 })

@@ -3,5 +3,5 @@ angular.module('app')
   bindings: {
   },
   controller: function() {},
-  templateUrl: ''
+  templateUrl: 'templates/twitch.html'
 });
