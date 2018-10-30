@@ -1,7 +1,6 @@
 angular.module('gtrak')
-.component('suggested', {
-  bindings: {
-  },
-  controller: function() {},
-  templateUrl: 'templates/suggested.html'
-});
+  .component('suggested', {
+    bindings: {},
+    controller: () => {},
+    templateUrl: 'templates/suggested.html'
+  });

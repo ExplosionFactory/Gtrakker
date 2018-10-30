@@ -1,7 +1,6 @@
 angular.module('gtrak')
-.component('fort', {
-  bindings: {
-  },
-  controller: function() {},
-  templateUrl: 'templates/stats/fort.html'
-});
+  .component('fort', {
+    bindings: {},
+    controller: () => {},
+    templateUrl: 'templates/stats/fort.html',
+  });
