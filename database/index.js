@@ -24,3 +24,11 @@ const userSchema = mongoose.Schema({
 });
 
 const User = mongoose.model('User', userSchema);
+
+const save = () => {
+
+}
+
+module.exports = {
+  save, 
+}

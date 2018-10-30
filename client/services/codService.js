@@ -1,9 +1,9 @@
 angular.module('gtrak')
   .service('codService', ($http) => {
-    this.getter = (platform, name, callback) => {
+    this.getter = (plat, name, callback) => {
       $http.post('/cod', {
-        plat: platform,
-        user: name,
+        platform: plat,
+        userName: name,
       }).then((results) => {
         callback(results)
       }).catch((err) => {

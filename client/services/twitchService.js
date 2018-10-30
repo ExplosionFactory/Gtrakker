@@ -1,6 +1,6 @@
 angular.module('gtrak')
   .service('twitchService', ($http) => {
-this.getter(platform,name){
+this.getter(plat,name){
   $http.post("/")
 }
   });
