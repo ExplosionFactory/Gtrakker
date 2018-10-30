@@ -7,4 +7,4 @@ app.use(express.static(__dirname + '/../client'));
 app.use(express.static(__dirname + '/../node_modules'));
 
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`now listen here u little port ${port}`))
