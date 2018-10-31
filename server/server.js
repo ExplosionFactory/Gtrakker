@@ -47,19 +47,24 @@ app.post('/fort', (req, res) => {
   const config = {
     headers: {
       'TRN-API-Key': '01587c67-4b71-49f8-aeac-eaae6f83ad90',
-    }
-  }
-  axios.get(`https://api.fortnitetracker.com/v1/profile/${plat}/${name}`, config)
+    },
+  };
+  axios.get('https://api.fortnitetracker.com/v1/profile/psn/bout2nut', config)
     .then((response) => {
-      console.log(response.data)
+      console.log(response.data);
       res.send(response.data);
     }).catch((err) => {
       console.log(err);
       res.send(err);
     });
 });
+
 app.post('/over', (req, res) => {
 
+});
+
+app.post('/signup', (req, res) => {
+  console.log(req);
 });
 
 app.listen(port, () => console.log(`now listen here u little port ${port}`))
