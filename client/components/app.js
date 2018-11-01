@@ -1,5 +1,10 @@
 angular.module('gtrak')
   .component('app', {
     bindings: {},
-    templateUrl: 'templates/login.html',
-  }).controller('MainCtrl', () => {});
+    templateUrl: 'templates/app.html',
+  }).controller('MainCtrl', () => {
+    this.log = function(){
+      console.log("hello")
+    }
+    this.log();
+  });
