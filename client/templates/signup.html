@@ -1,8 +1,8 @@
 
-    <div class="container-fluid">
+    <div class="container-fluid" ng-controller="signUpCtrl">
         <div class="row">
           <div class="col-md-12">
-            <form role="form" ng-submit="submit()">
+            <form role="form">
               <div class="form-group">
                 <label for="loginName"> 
                   Create Login Name
@@ -21,47 +21,39 @@
                   <label for="battleUser">
                     Enter Battlefield Username
                   </label>
-                  <input type="text" class="form-control" id="battleUser" />
-                  Check One: <br>
-                  <input type="checkbox" name="battlePsn" value="psn"> PSN<br>
-                  <input type="checkbox" name="battleXbox" value="xbox"> XBOX<br>
-                  <input type="checkbox" name="battlePc" value="pc"> PC<br>
+                  <input type="text" class="form-control" ng-model="battleUser" id="battleUser" />
+                  Type Platform(psn, xbox, pc): <br>
+                  <input type="text" ng-model="battlePlat" />
               </div>
 
               <div class="form-group">
                   <label for="codUser">
                     Enter COD Username
                   </label>
-                  <input type="text" class="form-control" id="codUser" />
-                  Check One: <br>
-                  <input type="checkbox" name="codPsn" value="psn"> PSN<br>
-                  <input type="checkbox" name="codXbox" value="xbox"> XBOX<br>
-                  <input type="checkbox" name="codPc" value="pc"> PC<br>
+                  <input type="text" class="form-control" ng-model="codUser" id="codUser" />
+                  Type Platform(psn, xbox, pc): <br>
+                  <input type="text" ng-model="codPlat" />
               </div>
 
               <div class="form-group">
                   <label for="fortUser">
                     Enter Fortnite(Epic) Username
                   </label>
-                  <input type="text" class="form-control" id="fortUser" />
-                  Check One: <br>
-                  <input type="checkbox" name="fortPsn" value="psn"> PSN<br>
-                  <input type="checkbox" name="fortXbox" value="xbox"> XBOX<br>
-                  <input type="checkbox" name="fortPc" value="pc"> PC<br>
+                  <input type="text" class="form-control" ng-model="fortUser" id="fortUser" />
+                  Type Platform(psn, xbox, pc): <br>
+                  <input type="text" ng-model="fortPlat" />
               </div>
 
               <div class="form-group">
                   <label for="overUser">
                     Enter Overwatch(Blizzard) Username
                   </label>
-                  <input type="text" class="form-control" id="overUser" />
-                  Check One: <br>
-                  <input type="checkbox" name="overPsn" value="psn"> PSN<br>
-                  <input type="checkbox" name="overXbox" value="xbox"> XBOX<br>
-                  <input type="checkbox" name="overPc" value="pc"> PC<br>
+                  <input type="text" class="form-control" ng-model="overUser" id="overUser" />
+                  Type Platform(psn, xbox, pc): <br>
+                  <input type="text" ng-model="overPlat" />
               </div>
 
-              <button type="submit" class="btn btn-primary">
+              <button type="submit" ng-click="submit()" class="btn btn-primary">
                 Submit
               </button>
             </form>
