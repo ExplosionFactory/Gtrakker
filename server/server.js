@@ -17,6 +17,7 @@ app.use(session({
   resave: true,
   saveUninitialized: true,
   cookie: {
+    path: '/login',
     username: null,
   },
 }));
@@ -35,8 +36,15 @@ app.post('/login', (req, res) => {
       if (err) {
         console.log(err);
       } else if (resolve) {
-        req.session.cookie.username = username;
+        req.session.save((err) => {
+          if (err) {
+            console.log(err)
+          } else {
+            req.session.cookie.username = username;
+          }
+        })
         console.log(req.session);
+
         res.send('true');
       }
     });
@@ -98,11 +106,12 @@ app.post('/over', (req, res) => {
 });
 
 
-app.get('appUser',(req,res) => {
-  const userName = req.session.cookie.username;
-  db.getUserbyUsername(userName).then((user) => {
-    res.send(user);
-  });
+app.get('/appUser', (req, res) => {
+  console.log(req.session, "/appUser")
+  // db.getUserbyUsername(userName).then((user) => {
+  //   res.data = user;
+  res.end();
+  // });
 });
 
 app.listen(port, () => console.log(`now listen here u little port ${port}`));
