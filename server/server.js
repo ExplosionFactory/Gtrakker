@@ -23,8 +23,7 @@ app.use(session({
 
 app.post('/signup', (req, res) => {
   db.save(req.body);
-  res.sendStatus(200);
-  res.redirect('/login');
+  res.status(200)
 });
 
 app.post('/login', (req, res) => {
@@ -32,7 +31,13 @@ app.post('/login', (req, res) => {
   const password = req.body.loginPassword;
 
   db.getUserbyUsername(username).then((user) => {
-    console.log(user);
+    bcrypt.compare(password, user.loginPass, (err, resolve) => {
+      if (err) {
+        console.log(err);
+      } else if (resolve) {
+        res.send('true');
+      }
+    });
   });
 });
 

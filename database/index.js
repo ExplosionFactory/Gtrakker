@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
-mongoose.connect('mongodb://localhost/gtrakker');
+mongoose.connect('mongodb://user1:adminuser1@ds163940.mlab.com:63940/gtrakker');
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));
 db.once('open', () => { console.log('connection successful'); });
