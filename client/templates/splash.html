@@ -1,8 +1,12 @@
 <div ng-controller="splashCtrl">
-  <button type="submit" ng-click="logsubmit()" class="btn btn-primary">
-    Login
-  </button>
-  <button type="submit" ng-click="signsubmit()" class="btn btn-primary">
-    Sign Up
-  </button>
+  <img ng-src="{{imageAddress}}" width="400" alt="logo"/> <br />
+  <div>
+    <button type="submit" ng-click="logsubmit()" style="background-color: whitesmoke; color: black" class="btn btn-primary center-block">
+      Login
+    </button>
+
+    <button type="submit" ng-click="signsubmit()" style="background-color: whitesmoke; color: black" class="btn btn-primary center-block">
+      Sign Up
+    </button>
+  </div>
 </div>

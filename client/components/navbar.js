@@ -6,6 +6,7 @@ angular.module('gtrak')
     bindings: {},
     templateUrl: 'templates/navbar.html',
   }).controller('navCtrl', function ($scope, $location) {
+    $scope.imageAddress = '../../images/gtrakker_logo.png';
     $scope.logout = () => {
       // need to destroy session here
       // req.session.destroy(); or req.session = null;
