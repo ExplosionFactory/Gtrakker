@@ -35,11 +35,14 @@ app.post('/login', (req, res) => {
       if (err) {
         console.log(err);
       } else if (resolve) {
+        req.session.cookie.username = username;
+        console.log(req.session);
         res.send('true');
       }
     });
   });
 });
+
 
 app.post('/battle', (req, res) => {
   const config = {
@@ -47,6 +50,7 @@ app.post('/battle', (req, res) => {
       'TRN-API-Key': '01587c67-4b71-49f8-aeac-eaae6f83ad90',
     },
   };
+
   axios.get(` https://battlefieldtracker.com/bf1/api/Stats/CareerForOwnedGames?platform=${plat}&displayName=${name}`, config)
     .then((response) => {
       console.log(response.data);
@@ -93,5 +97,12 @@ app.post('/over', (req, res) => {
 
 });
 
+
+app.get('appUser',(req,res) => {
+  const userName = req.session.cookie.username;
+  db.getUserbyUsername(userName).then((user) => {
+    res.send(user);
+  });
+});
 
 app.listen(port, () => console.log(`now listen here u little port ${port}`));
