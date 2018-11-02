@@ -1,5 +1,7 @@
+/* eslint-disable no-undef */
 /* eslint-disable prefer-arrow-callback */
 /* eslint-disable func-names */
+// eslint-disable-next-line no-unused-vars
 const app = angular.module('gtrak', ['ngRoute']).config(function ($routeProvider) {
   $routeProvider.when('/login', {
     templateUrl: 'templates/login.html',
