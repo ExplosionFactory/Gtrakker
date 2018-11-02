@@ -21,7 +21,7 @@ app.use(session({
 app.post('/signup', (req, res) => {
   db.save(req.body);
   res.sendStatus(200);
-  res.redirect('');
+  res.redirect('/login');
 });
 
 app.post('/battle', (req, res) => {

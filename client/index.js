@@ -1,4 +1,4 @@
-const app = angular.module('gtrak', ['ngRoute']).config(($routeProvider) => {
+const app = angular.module('gtrak', ['ngRoute']).config(function($routeProvider){
   $routeProvider.when('/login', {
     templateUrl: 'templates/login.html',
     controller: 'loginCtrl',
@@ -6,7 +6,8 @@ const app = angular.module('gtrak', ['ngRoute']).config(($routeProvider) => {
     templateUrl: 'templates/signup.html',
     controller: 'signUpCtrl',
   }).otherwise({
-    redirectTo: 'client/index.html',
-    controller: 'MainCtrl',
+    redirectTo: '/',
+    templateUrl: 'templates/signup.html',
+    controller: 'signUpCtrl',
   });
 });

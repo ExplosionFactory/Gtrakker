@@ -2,7 +2,7 @@ angular.module('gtrak')
   .component('app', {
     bindings: {},
     templateUrl: 'templates/app.html',
-  }).controller('MainCtrl', () => {
+  }).controller('MainCtrl',function(){
     this.log = function(){
       console.log("hello")
     }

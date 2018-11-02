@@ -2,7 +2,7 @@ angular.module('gtrak')
   .component('signUp', {
     bindings: {},
     templateUrl: 'templates/signup.html',
-  }).controller('signUpCtrl', ($scope, $http) => {
+  }).controller('signUpCtrl', function ($scope, $http){
     $scope.submit = () => {
       $http({
         method: 'POST',

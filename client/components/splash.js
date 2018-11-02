@@ -2,6 +2,6 @@ angular.module('gtrak')
   .component('splash', {
     bindings: {},
     templateUrl: 'templates/splash.html',
-  }).controller('splashCtrl', () => {
+  }).controller('splashCtrl', function(){
 
   });
