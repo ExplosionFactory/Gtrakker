@@ -18,10 +18,15 @@ app.use(session({
     username: null,
   },
 }));
+
 app.post('/signup', (req, res) => {
   db.save(req.body);
   res.sendStatus(200);
   res.redirect('');
+});
+
+app.post('/login', (req, res) => {
+  console.log(req.body);
 });
 
 app.post('/battle', (req, res) => {
