@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
@@ -58,9 +59,7 @@ const save = (dataObj) => {
     if (err) {
       console.error(err);
     } else {
-      /* eslint-disable no-console */
       console.log(`${user}has been saved.`);
-      /* eslint-enable no-console */
     }
   });
 };

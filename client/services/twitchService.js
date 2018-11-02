@@ -1,6 +1,5 @@
+// eslint-disable-next-line no-undef
 angular.module('gtrak')
-  .service('twitchService', ($http) => {
-this.getter(plat,name){
-  $http.post("/")
-}
+  .service('twitchService', () => {
+
   });

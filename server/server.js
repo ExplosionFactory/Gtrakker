@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const express = require('express');
 const session = require('express-session');
 const bcrypt = require('bcrypt');
@@ -24,7 +25,7 @@ app.use(session({
 
 app.post('/signup', (req, res) => {
   db.save(req.body);
-  res.status(200)
+  res.status(200);
 });
 
 app.post('/login', (req, res) => {
