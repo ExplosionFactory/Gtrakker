@@ -1,5 +1,6 @@
 const express = require('express');
 const session = require('express-session');
+const bcrypt = require('bcrypt');
 
 const app = express();
 const port = 3000;
@@ -9,8 +10,8 @@ const db = require('../database/index.js');
 
 app.use(bodyParser.json());
 
-app.use(express.static(__dirname + '/../client'));
-app.use(express.static(__dirname + '/../node_modules'));
+app.use(express.static(`${__dirname }/../client`));
+app.use(express.static(`${__dirname}/../node_modules`));
 app.use(session({
   secret: 'hackerman',
   resave: true,
@@ -27,7 +28,12 @@ app.post('/signup', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-  console.log(req.body);
+  const username = req.body.loginName;
+  const password = req.body.loginPassword;
+
+  db.getUserbyUsername(username).then((user) => {
+    console.log(user);
+  });
 });
 
 app.post('/battle', (req, res) => {
@@ -83,4 +89,4 @@ app.post('/over', (req, res) => {
 });
 
 
-app.listen(port, () => console.log(`now listen here u little port ${port}`))
+app.listen(port, () => console.log(`now listen here u little port ${port}`));
