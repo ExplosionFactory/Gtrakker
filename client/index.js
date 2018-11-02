@@ -1,3 +1,5 @@
+/* eslint-disable prefer-arrow-callback */
+/* eslint-disable func-names */
 const app = angular.module('gtrak', ['ngRoute']).config(function ($routeProvider) {
   $routeProvider.when('/login', {
     templateUrl: 'templates/login.html',
@@ -7,7 +9,7 @@ const app = angular.module('gtrak', ['ngRoute']).config(function ($routeProvider
     controller: 'signUpCtrl',
   }).otherwise({
     redirectTo: '/',
-    templateUrl: 'templates/signup.html',
-    controller: 'signUpCtrl',
+    templateUrl: 'templates/splash.html',
+    controller: 'splashCtrl',
   });
 });

@@ -1,8 +1,10 @@
+/* eslint-disable prefer-arrow-callback */
+/* eslint-disable func-names */
 angular.module('gtrak')
   .component('signUp', {
     bindings: {},
     templateUrl: 'templates/signup.html',
-  }).controller('signUpCtrl',function ($scope, $http, $location){
+  }).controller('signUpCtrl', function ($scope, $http, $location) {
     $scope.submit = () => {
       $http({
         method: 'POST',
