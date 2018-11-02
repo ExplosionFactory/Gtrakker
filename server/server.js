@@ -1,5 +1,5 @@
 const express = require('express');
-const session = require('express-session')
+const session = require('express-session');
 const app = express();
 const port = 3000;
 const axios = require('axios');
@@ -8,8 +8,8 @@ const db = require('../database/index.js');
 
 app.use(bodyParser.json());
 
-app.use(express.static(__dirname + '/../client'));
-app.use(express.static(__dirname + '/../node_modules'));
+app.use(express.static(`${__dirname}/../client`));
+app.use(express.static(`${__dirname}/../node_modules`));
 app.use(session({
   secret: 'hackerman',
   resave: true,
@@ -82,4 +82,4 @@ app.post('/over', (req, res) => {
 });
 
 
-app.listen(port, () => console.log(`now listen here u little port ${port}`))
+app.listen(port, () => console.log(`now listen here u little port ${port}`));

@@ -1,4 +1,4 @@
-const app = angular.module('gtrak', ['ngRoute']).config(function($routeProvider){
+const app = angular.module('gtrak', ['ngRoute']).config(function ($routeProvider) {
   $routeProvider.when('/login', {
     templateUrl: 'templates/login.html',
     controller: 'loginCtrl',
