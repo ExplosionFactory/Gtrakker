@@ -1,5 +1,7 @@
 const express = require('express');
 const session = require('express-session');
+const bcrypt = require('bcrypt');
+
 const app = express();
 const port = 3000;
 const axios = require('axios');
@@ -21,12 +23,23 @@ app.use(session({
 
 app.post('/signup', (req, res) => {
   db.save(req.body);
-  res.sendStatus(200);
-  res.redirect('/login');
+  res.status(200)
 });
 
 app.post('/login', (req, res) => {
-  console.log(req.body);
+  const username = req.body.loginName;
+  const password = req.body.loginPassword;
+
+  db.getUserbyUsername(username).then((user) => {
+    bcrypt.compare(password, user.loginPass, (err, resolve) => {
+      if (err) {
+        console.log(err);
+      } else if (resolve) {
+       
+        res.send('true');
+      }
+    });
+  });
 });
 
 app.post('/battle', (req, res) => {

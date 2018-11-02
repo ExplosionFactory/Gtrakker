@@ -65,4 +65,7 @@ const save = (dataObj) => {
   });
 };
 
+const getUserbyUsername = name => User.findOne({ loginName: name });
+
 module.exports.save = save;
+module.exports.getUserbyUsername = getUserbyUsername;

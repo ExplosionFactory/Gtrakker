@@ -3,5 +3,4 @@ angular.module('gtrak')
     bindings: {},
     templateUrl: 'templates/splash.html',
   }).controller('splashCtrl', function () {
-
   });
