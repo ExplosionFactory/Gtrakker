@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
-mongoose.connect('mongodb://localhost/gtrakker');
+mongoose.connect('mongodb://user1:adminuser1@ds163940.mlab.com:63940/gtrakker');
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));
 db.once('open', () => { console.log('connection successful'); });
@@ -30,9 +31,10 @@ const User = mongoose.model('User', userSchema);
 
 const save = (dataObj) => {
   const userObj = {};
-
+  const salt = bcrypt.genSaltSync(10);
+  const hash = bcrypt.hashSync(dataObj.loginPass, salt);
+  userObj.loginPass = hash;
   userObj.loginName = dataObj.loginName;
-  userObj.loginPass = dataObj.loginPass;
 
   userObj.battlefield = {};
   userObj.battlefield.platform = dataObj.platforms.battlePlat;

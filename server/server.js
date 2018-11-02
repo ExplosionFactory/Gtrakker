@@ -1,4 +1,5 @@
 const express = require('express');
+const session = require('express-session')
 const app = express();
 const port = 3000;
 const axios = require('axios');
@@ -9,10 +10,18 @@ app.use(bodyParser.json());
 
 app.use(express.static(__dirname + '/../client'));
 app.use(express.static(__dirname + '/../node_modules'));
-
+app.use(session({
+  secret: 'hackerman',
+  resave: true,
+  saveUninitialized: true,
+  cookie: {
+    username: null,
+  },
+}));
 app.post('/signup', (req, res) => {
   db.save(req.body);
   res.sendStatus(200);
+  res.redirect('');
 });
 
 app.post('/battle', (req, res) => {
