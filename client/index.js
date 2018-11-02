@@ -10,9 +10,13 @@ const app = angular.module('gtrak', ['ngRoute']).config(function ($routeProvider
   }).when('/app', {
     templateUrl: 'templates/app.html',
     controller: 'MainCtrl',
-  }).otherwise({
-    redirectTo: '/',
+  }).when('/splash', {
     templateUrl: 'templates/splash.html',
     controller: 'splashCtrl',
-  });
+  })
+    .otherwise({
+      redirectTo: '/',
+      templateUrl: 'templates/splash.html',
+      controller: 'splashCtrl',
+    });
 });
