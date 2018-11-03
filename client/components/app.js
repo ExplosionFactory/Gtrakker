@@ -28,9 +28,13 @@ angular.module('gtrak')
       //   console.log(overwatchData);
       //   controller.gdata.overwatch = overwatchData.data;
       // });
-      $http.post('/news').then((newsData) => { 
-        console.log(newsData);
-        controller.gdata.news = newsData.data;
+    //   $http.post('/news').then((newsData) => { 
+    //     console.log(newsData);
+    //     controller.gdata.news = newsData.data;
+    //   });
+      $http.post('/twitch').then((twitchData) => { 
+        console.log(twitchData);
+        controller.gdata.twitch = twitchData.data.clips;
       });
     });
     console.log(this.gdata);
