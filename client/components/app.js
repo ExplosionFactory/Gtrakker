@@ -14,24 +14,24 @@ angular.module('gtrak')
       console.log(data);
       this.userData = data.data;
     }).then(() => {
-      $http.post('/fort', controller.userData.fortnite).then((fortniteData) => {
-        console.log(fortniteData);
-        controller.gdata.fortnite = fortniteData.data;
-      });
-      $http.post('/cod', controller.userData.cod).then((codData) => {
-        controller.gdata.cod = codData.data.data.stats;
-      });
-      $http.post('/bf4', controller.userData.battlefield).then((battleData) => {
-        controller.gdata.battle = battleData.data;
-      });
-      $http.post('/over', controller.userData.overwatch).then((overwatchData) => { 
+      // $http.post('/fort', controller.userData.fortnite).then((fortniteData) => {
+      //   console.log(fortniteData);
+      //   controller.gdata.fortnite = fortniteData.data;
+      // });
+      // $http.post('/cod', controller.userData.cod).then((codData) => {
+      //   controller.gdata.cod = codData.data.data.stats;
+      // });
+      // $http.post('/bf4', controller.userData.battlefield).then((battleData) => {
+      //   controller.gdata.battle = battleData.data;
+      // });
+      $http.post('/over', controller.userData.overwatch).then((overwatchData) => {
         console.log(overwatchData);
         controller.gdata.overwatch = overwatchData.data;
       });
-      $http.post('/news').then((newsData) => { 
-        // console.log(newsData);
-        // controller.gdata.news = newsData.data;
-      });
+      // $http.post('/news').then((newsData) => {
+      //   // console.log(newsData);
+      //   // controller.gdata.news = newsData.data;
+      // });
     });
     console.log(this.gdata);
   });

@@ -4,5 +4,5 @@ angular.module('gtrak')
       data: '<',
     },
     controller: () => {},
-    templateUrl: 'templates/stats/overwatch.html'
+    templateUrl: 'templates/stats/overwatch.html',
   });
