@@ -22,4 +22,8 @@ const app = angular.module('gtrak', ['ngRoute']).config(function ($routeProvider
       templateUrl: 'templates/splash.html',
       controller: 'splashCtrl',
     });
+}).controller('MainCtrl', function ($scope, $location) {
+  $scope.$on('$routeChangeSuccess', function () {
+    $scope.isIndexPage = $location.path() === '/';
+  });
 });

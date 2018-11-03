@@ -1,11 +1,25 @@
 <!-- news -->
 <div class="jumbotron" ng-controller="newsCtrl">
     <h2>
-     
       News
     </h2>
     <p>
-      various articles from ign
-      {{$ctrl.data}}
+      <ul>
+        <li>
+          <a href="{{$ctrl.data[0].url}}">{{$ctrl.data[0].title}}</a>
+        </li>
+        <li>
+          <a href="{{$ctrl.data[1].url}}">{{$ctrl.data[1].title}}</a>
+        </li>
+        <li>
+          <a href="{{$ctrl.data[2].url}}">{{$ctrl.data[2].title}}</a>
+        </li>
+        <li>
+          <a href="{{$ctrl.data[3].url}}">{{$ctrl.data[3].title}}</a>
+        </li>
+        <li>
+          <a href="{{$ctrl.data[4].url}}">{{$ctrl.data[4].title}}</a>
+        </li>
+      </ul>
     </p>
   </div>
