@@ -10,35 +10,31 @@ angular.module('gtrak')
     };
     this.message = 'hi';
     const controller = this;
-    // $http.get('/appUser').then((data) => {
-    //   console.log(data);
-    //   this.userData = data.data;
-    // }).then(() => {
-    //   $http.post('/fort', controller.userData.fortnite).then((fortniteData) => {
-    //     console.log(fortniteData);
-    //     controller.gdata.fortnite = fortniteData.data;
-    //   });
-    //   $http.post('/cod', controller.userData.cod).then((codData) => {
-    //     controller.gdata.cod = codData.data.data.stats;
-    //   });
-    //   $http.post('/bf4', controller.userData.battlefield).then((battleData) => {
-    //     controller.gdata.battle = battleData.data;
-    //   });
-    // });
-<<<<<<< HEAD
-    //   $http.post('/bf4', controller.userData.battlefield).then((battleData) => { 
-    //     controller.gdata.battle = battleData.data;
-    //   });
-    // });
+    $http.get('/appUser').then((data) => {
+      console.log(data);
+      this.userData = data.data;
+    }).then(() => {
+      $http.post('/fort', controller.userData.fortnite).then((fortniteData) => {
+        console.log(fortniteData);
+        controller.gdata.fortnite = fortniteData.data;
+      });
+      $http.post('/cod', controller.userData.cod).then((codData) => {
+        controller.gdata.cod = codData.data.data.stats;
+      });
+      $http.post('/bf4', controller.userData.battlefield).then((battleData) => {
+        controller.gdata.battle = battleData.data;
+      });
+    
+      $http.post('/bf4', controller.userData.battlefield).then((battleData) => { 
+        controller.gdata.battle = battleData.data;
+      });
       $http.post('/over', controller.userData.overwatch).then((overwatchData) => { 
         console.log(overwatchData);
         controller.gdata.overwatch = overwatchData.data;
       });
-    });
-=======
->>>>>>> 71eecb86fddadabf925ee92df57d4eb951e8f90b
+    
     console.log(this.gdata);
-  // });
+  
   });
 
 //   controller.cod = data.cod;
