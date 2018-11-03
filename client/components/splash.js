@@ -6,6 +6,7 @@ angular.module('gtrak')
     bindings: {},
     templateUrl: 'templates/splash.html',
   }).controller('splashCtrl', function ($scope, $location) {
+    $scope.imageAddress = '../../images/gtrakker_logo.png';
     $scope.logsubmit = () => {
       $location.path('/login');
     };
