@@ -1,6 +1,8 @@
 angular.module('gtrak')
   .component('battle', {
-    bindings: {},
+    bindings: {
+      data: '<',
+    },
     controller: () => {},
-    templateUrl: 'templates/stats/battle.html'
+    templateUrl: 'templates/stats/battle.html',
   });

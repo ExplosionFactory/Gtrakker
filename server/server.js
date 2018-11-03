@@ -46,20 +46,17 @@ app.post('/login', (req, res) => {
   });
 });
 
-app.post('/battle', (req, res) => {
-  const config = {
-    headers: {
-      'TRN-API-Key': '01587c67-4b71-49f8-aeac-eaae6f83ad90',
-    },
-  };
-
-  axios.get(` https://battlefieldtracker.com/bf1/api/Stats/CareerForOwnedGames?platform=${plat}&displayName=${name}`, config)
+app.post('/bf4', (req, res) => {
+  console.log(req.body);
+  const plat = req.body.platform;
+  const user = req.body.username;
+  axios.get(`http://api.bf4stats.com/api/playerInfo?plat=${plat}&name=${user}&output=json`)
     .then((response) => {
-      console.log(response.data);
+      
       res.send(response.data);
     }).catch((err) => {
       console.log(err);
-      res.send(err);
+      res.send('heyyy');
     });
 });
 
