@@ -3,6 +3,8 @@ angular.module('gtrak')
     bindings: {
       data: '<',
     },
-    controller: () => {},
+    controller: ($scope) => {
+      $scope.imgAddress = '../../images/overwatch.png';
+    },
     templateUrl: 'templates/stats/overwatch.html',
   });
