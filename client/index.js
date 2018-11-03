@@ -11,7 +11,8 @@ const app = angular.module('gtrak', ['ngRoute']).config(function ($routeProvider
     controller: 'signUpCtrl',
   }).when('/app', {
     templateUrl: 'templates/app.html',
-    controller: 'MainCtrl',
+    controller: 'appCtrl',
+    controllerAs: 'app',
   }).when('/splash', {
     templateUrl: 'templates/splash.html',
     controller: 'splashCtrl',

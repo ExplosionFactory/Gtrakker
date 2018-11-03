@@ -1,11 +1,12 @@
-<!-- stats -->
+
 <div class="col-md-8">
     <h3 style="color: lightcyan">
       Game Stats
+      {{$ctrl.gdata.fortnite}}
     </h3>
     <battle></battle>
     <cod></cod>
-    <fort></fort>
+    <fort data="$ctrl.gdata.fortnite"></fort>
     <overwatch></overwatch>
     
   </div>

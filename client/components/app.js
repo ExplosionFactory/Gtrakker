@@ -3,11 +3,26 @@
 // eslint-disable-next-line no-undef
 angular.module('gtrak')
   .component('app', {
-    bindings: {},
     templateUrl: 'templates/app.html',
-  }).controller('MainCtrl', function ($http) {
-    $http.get('/appUser').then((data) =>{
-      console.log(data);
+  }).controller('appCtrl', function ($http) {
+    this.userData = {};
+    this.gdata = {
+      1: 'fuuuuuuuck',
+    };
+    this.message = 'hi';
+    const controller = this;
+    $http.get('/appUser').then((data) => {
+      this.userData = data.data;
+    }).then(() => {
+      $http.post('/fort', controller.userData.fortnite).then((fortniteData) => {
+        console.log(fortniteData);
+        controller.gdata.fortnite = fortniteData.data;
+      });
     });
-
   });
+  
+  //   controller.cod = data.cod;
+  //   controller.fortnite = data.data.fortnite;
+  //   controller.overwatch = data.overwatch;
+  //   return Promise.all([bf, cod, c, d])
+  // }).then(([bfData,codData,fortData,overData]))
