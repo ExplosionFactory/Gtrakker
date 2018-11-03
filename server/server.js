@@ -64,14 +64,23 @@ app.post('/battle', (req, res) => {
 });
 
 app.post('/cod', (req, res) => {
+  let platform;
+  const user = req.body.username;
+  console.log(req.body);
+  if (req.body.platform === 'psn') {
+    platform = 2;
+  } else if (req.body.platform === 'xbox') {
+    platform = 1;
+  } else if (req.body.platform === 'BattleNet') {
+    platform = 1;
+  }
   const config = {
     headers: {
       'TRN-API-Key': '01587c67-4b71-49f8-aeac-eaae6f83ad90',
     },
   };
-  axios.get(`https://cod-api.tracker.gg/v1/standard/bo4/profile/${plat}/${name}`, config)
+  axios.get(`https://cod-api.tracker.gg/v1/standard/bo4/profile/${platform}/${user}`, config)
     .then((response) => {
-      console.log(response.data);
       res.send(response.data);
     }).catch((err) => {
       console.log(err);

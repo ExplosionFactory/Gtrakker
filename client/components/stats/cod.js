@@ -1,6 +1,8 @@
 angular.module('gtrak')
   .component('cod', {
-    bindings: {},
+    bindings: {
+      data: '<',
+    },
     controller: () => {},
     templateUrl: 'templates/stats/cod.html',
   });
