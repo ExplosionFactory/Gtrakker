@@ -101,6 +101,16 @@ app.post('/over', (req, res) => {
 
 });
 
+app.post('/news', (req, res) => {
+  axios.get('https://newsapi.org/v2/top-headlines?sources=ign&apiKey=3d777cd4d5514902b66b96aa555766ea')
+    .then((response) => {
+      // console.log(response.data.articles);
+      res.send(response.data.articles);
+    }).catch((err) => {
+      res.send(err);
+    });
+});
+
 
 app.get('/appUser', (req, res) => {
   const userName = req.session.user;
