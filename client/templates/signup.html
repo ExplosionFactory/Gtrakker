@@ -1,5 +1,6 @@
 
     <div class="container-fluid" ng-controller="signUpCtrl">
+        <img ng-src="{{imageAddress}}" ng-style="{'width': '400px','margin': '-10px -10px 10px 650px'}" alt="logo"/> <br />
         <div class="row">
           <div class="col-md-12">
             <form role="form">
@@ -19,7 +20,7 @@
 
               <div class="form-group">
                   <label for="battleUser" style="color: cornsilk">
-                    Enter Battlefield Username
+                    Enter Battlefield 4 Username
                   </label>
                   <input type="text" class="form-control" ng-model="battleUser" id="battleUser" /> 
                   <br/>
@@ -31,12 +32,12 @@
 
               <div class="form-group">
                   <label for="codUser" style="color: cornsilk">
-                    Enter COD Username
+                    Enter COD BO4 Username
                   </label>
                   <input type="text" class="form-control" ng-model="codUser" id="codUser" />
                   <br/>
                   <label style="color: cornsilk">
-                    Enter COD Platform(psn, xbox, BattleNet):
+                    Enter COD BO4 Platform(psn, xbox, BattleNet):
                   </label>
                   <input type="text" ng-model="codPlat" />
               </div>
@@ -55,17 +56,13 @@
 
               <div class="form-group">
                   <label for="overUser" style="color: cornsilk">
-                    Enter Overwatch(Blizzard) Username
+                    Enter Overwatch(Blizzard) Battle Tag (*PC Only*) (please exchange '#' in battle tag for '-')
                   </label>
                   <input type="text" class="form-control" ng-model="overUser" id="overUser" />
                   <br/>
-                  <label style="color: cornsilk">
-                    Enter Overwatch Platform(psn, xbox, pc):
-                  </label>
-                  <input type="text" ng-model="overPlat" />
               </div>
 
-              <button type="submit" ng-click="submit()" class="btn btn-primary">
+              <button type="submit" ng-click="submit()" style="background-color: whitesmoke; color: black; margin: -40px 5px 5px 800px" class="btn btn-primary">
                 Submit
               </button>
             </form>

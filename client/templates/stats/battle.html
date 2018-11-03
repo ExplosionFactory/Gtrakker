@@ -1,9 +1,12 @@
 <div class="jumbotron">
     <h2>
-      {{$ctrl.data}}
-      Battlefield
+      Battlefield 4
     </h2>
     <p>
-      stats from battlefield
+      Rank: {{$ctrl.data.stats.rank}} <br />
+      Wins: {{$ctrl.data.stats.numWins}} <br /> 
+      Win %: {{$ctrl.data.stats.extra.wlr}} <br />
+      Kills: {{$ctrl.data.stats.kills}} <br />  
+      K/D: {{$ctrl.data.stats.extra.kdr}} <br /> 
     </p>
   </div>

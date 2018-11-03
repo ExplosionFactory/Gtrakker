@@ -1,5 +1,6 @@
 
     <div class="container-fluid" ng-controller="loginCtrl">
+        <img ng-src="{{imageAddress}}" ng-style="{'width': '400px','margin': '-10px -10px 10px 650px'}" alt="logo"/> <br />
         <div class="row">
           <div class="col-md-12">
             <form role="form">
@@ -15,7 +16,7 @@
                 </label>
                 <input type="password" ng-model="loginPassword" class="form-control" id="loginPassword" />
               </div>
-              <button type="submit" ng-click="submit()" class="btn btn-primary">
+              <button type="submit" ng-click="submit()" style="background-color: whitesmoke; color: black; margin: 10px 5px 5px 800px" class="btn btn-primary">
                 Submit
               </button>
             </form>
