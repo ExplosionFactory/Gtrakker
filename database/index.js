@@ -23,7 +23,6 @@ const userSchema = mongoose.Schema({
     username: String,
   },
   overwatch: {
-    platform: String,
     username: String,
   },
 });
@@ -50,7 +49,6 @@ const save = (dataObj) => {
   userObj.fortnite.username = dataObj.usernames.fortUser;
 
   userObj.overwatch = {};
-  userObj.overwatch.platform = dataObj.platforms.overPlat;
   userObj.overwatch.username = dataObj.usernames.overUser;
 
   // console.log('user', userObj);

@@ -6,6 +6,7 @@ angular.module('gtrak')
     bindings: {},
     templateUrl: 'templates/login.html',
   }).controller('loginCtrl', function ($http, $scope, $location) {
+    $scope.imageAddress = '../../images/gtrakker_logo.png';
     $scope.submit = () => {
       $http({
         method: 'POST',
