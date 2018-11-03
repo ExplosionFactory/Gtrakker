@@ -133,17 +133,16 @@ app.get('/appUser', (req, res) => {
   });
 });
 app.post('/twitch', (req, res) => {
-  const games = ['Fortnite', 'Overwatch', 'Call of Duty: Black Ops 4', 'Battlefield 4']
-  const game = games[Math.floor(Math.random()*games.length)]
+  const games = ['Fortnite', 'Overwatch', 'Call of Duty: Black Ops 4', 'Battlefield 4'];
+  const game = games[Math.floor(Math.random() * games.length)];
   const config = {
     headers: {
       'Client-ID': 'eutum6yldtscmam5mu1s02bakosx69',
-      'Accept': 'application/vnd.twitchtv.v5+json'
+      'Accept': 'application/vnd.twitchtv.v5+json',
     },
   };
-  axios.get(`https://api.twitch.tv/kraken/clips/top?limit=10&game=${game}&trending=true`, config)
+  axios.get(`https://api.twitch.tv/kraken/clips/top?limit=1&game=${game}&trending=true`, config)
     .then((response) => {
-     
       res.send(response.data);
     }).catch((err) => {
       res.send(err);
