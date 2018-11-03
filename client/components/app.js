@@ -22,8 +22,13 @@ angular.module('gtrak')
     //     controller.gdata.cod = codData.data.data.stats;
     //   });
     // });
-      $http.post('/bf4', controller.userData.battlefield).then((battleData) => { 
-        controller.gdata.battle = battleData.data;
+    //   $http.post('/bf4', controller.userData.battlefield).then((battleData) => { 
+    //     controller.gdata.battle = battleData.data;
+    //   });
+    // });
+      $http.post('/over', controller.userData.overwatch).then((overwatchData) => { 
+        console.log(overwatchData);
+        controller.gdata.overwatch = overwatchData.data;
       });
     });
     console.log(this.gdata);

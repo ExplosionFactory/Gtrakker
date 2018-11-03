@@ -52,7 +52,7 @@ app.post('/bf4', (req, res) => {
   const user = req.body.username;
   axios.get(`http://api.bf4stats.com/api/playerInfo?plat=${plat}&name=${user}&output=json`)
     .then((response) => {
-      
+
       res.send(response.data);
     }).catch((err) => {
       console.log(err);
@@ -104,8 +104,17 @@ app.post('/fort', (req, res) => {
 });
 
 app.post('/over', (req, res) => {
-
+  console.log(req.body);
+  const user = req.body.username;
+  axios.get(`https://ow-api.com/v1/stats/pc/us/${user}/profile`)
+    .then((response) => {
+      res.send(response.data);
+    }).catch((err) => {
+      console.log(err);
+      res.send(err);
+    });
 });
+
 
 app.post('/news', (req, res) => {
   axios.get('https://newsapi.org/v2/top-headlines?sources=ign&apiKey=3d777cd4d5514902b66b96aa555766ea')

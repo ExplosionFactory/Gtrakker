@@ -1,6 +1,8 @@
 angular.module('gtrak')
   .component('overwatch', {
-    bindings: {},
+    bindings: {
+      data: '<',
+    },
     controller: () => {},
     templateUrl: 'templates/stats/overwatch.html'
   });
