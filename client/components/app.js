@@ -28,7 +28,6 @@ angular.module('gtrak')
       //   console.log(overwatchData);
       //   controller.gdata.overwatch = overwatchData.data;
       // });
-<<<<<<< HEAD
     //   $http.post('/news').then((newsData) => { 
     //     console.log(newsData);
     //     controller.gdata.news = newsData.data;
@@ -37,12 +36,6 @@ angular.module('gtrak')
         console.log(twitchData);
         controller.gdata.twitch = twitchData.data.clips;
       });
-=======
-      // $http.post('/news').then((newsData) => {
-      //   console.log(newsData);
-      //   controller.gdata.news = newsData.data;
-      // });
->>>>>>> 510d4e7e68c689a2d12f4c16f736b2a8c38c6797
     });
     console.log(this.gdata);
   });
