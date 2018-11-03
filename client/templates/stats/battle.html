@@ -1,12 +1,13 @@
 <div class="jumbotron">
-    <h2>
-      Battlefield 4
-    </h2>
-    <p>
-      Rank: {{$ctrl.data.stats.rank}} <br />
-      Wins: {{$ctrl.data.stats.numWins}} <br /> 
-      Win %: {{$ctrl.data.stats.extra.wlr}} <br />
-      Kills: {{$ctrl.data.stats.kills}} <br />  
-      K/D: {{$ctrl.data.stats.extra.kdr}} <br /> 
-    </p>
+  <h2>
+    Battlefield 4
+  </h2>
+  <p>
+    Rank: {{$ctrl.data.stats.rank}} <br />
+    Wins: {{$ctrl.data.stats.numWins}} <br /> 
+    Win %: {{$ctrl.data.stats.extra.wlr}} <br />
+    Kills: {{$ctrl.data.stats.kills}} <br />  
+    K/D: {{$ctrl.data.stats.extra.kdr}} <br /> 
+  </p>
+  <img ng-src="{{imgAddress}}" ng-style="{'width':'500px', 'margin':'-450px 0px -200px 600px'}" alt="battle logo"/>
   </div>
