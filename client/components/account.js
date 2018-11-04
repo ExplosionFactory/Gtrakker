@@ -14,4 +14,7 @@ angular.module('gtrak')
       $http.post("/update", {game: $scope.updateGame, user: $scope.updateName, platform: $scope.updatePlat });
       console.log('game', $scope.updateGame, 'user', $scope.updateName, 'plat', $scope.updatePlat);
     };
+    $scope.back = () => {
+      $location.path('/app');
+    };
   });
