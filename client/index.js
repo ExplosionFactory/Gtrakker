@@ -17,6 +17,10 @@ const app = angular.module('gtrak', ['ngRoute']).config(function ($routeProvider
     templateUrl: 'templates/splash.html',
     controller: 'splashCtrl',
   })
+    .when('/delete', {
+      templateUrl: 'templates/delete.html',
+      controller: 'deleteCtrl',
+    })
     .otherwise({
       redirectTo: '/',
       templateUrl: 'templates/splash.html',

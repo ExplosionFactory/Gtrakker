@@ -3,6 +3,10 @@
     <div class="col-md-12">
       <div class="page-header">
         <img ng-src="{{imageAddress}}" ng-style="{'width': '400px','margin': '-50px 10px 5px 650px'}" alt="logo"/> <br />
+
+        <div ng-show="myValue" style="color: red"><h4>User not found</h4></div>
+        <div ng-show="myValue" class="ng-hide"></div>
+
         <h4 style="color: whitesmoke">
           Search for friend's stats
         </h4>
@@ -12,6 +16,9 @@
         </button>
         <button type="button" ng-click="logout()" style="background-color: whitesmoke; color: black; margin: 2px 5px 5px 1500px" class="btn btn-outline-warning">
           logout
+        </button>
+        <button type="button" ng-click="delete()" style="background-color: whitesmoke; color: black; margin: -55px 5px 10px 1600px" class="btn btn-outline-warning">
+          delete account
         </button>
       </div> 
     </div>

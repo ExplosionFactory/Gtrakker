@@ -15,6 +15,7 @@ angular.module('gtrak')
         this.userData = data.data;
       }).then(() => {
         if (controller.userData.fortnite.username !== null && controller.userData.fortnite.platform !== null) {
+          controller.gdata.fortnite = null;
           $http.post('/fort', controller.userData.fortnite).then((fortniteData) => {
             controller.gdata.fortnite = fortniteData.data;
           });
@@ -22,6 +23,7 @@ angular.module('gtrak')
           controller.gdata.fortnite = null;
         }
         if (controller.userData.cod.username !== null && controller.userData.cod.platform !== null) {
+          controller.gdata.cod = null;
           $http.post('/cod', controller.userData.cod).then((codData) => {
             controller.gdata.cod = codData.data.data.stats;
           });
@@ -29,6 +31,7 @@ angular.module('gtrak')
           controller.gdata.cod = null;
         }
         if (controller.userData.battlefield.username !== null && controller.userData.battlefield.platform !== null) {
+          controller.gdata.battle = null;
           $http.post('/bf4', controller.userData.battlefield).then((battleData) => {
             controller.gdata.battle = battleData.data;
           });
@@ -36,6 +39,7 @@ angular.module('gtrak')
           controller.gdata.battle = null;
         }
         if (controller.userData.overwatch.username !== null) {
+          controller.gdata.overwatch = null;
           $http.post('/over', controller.userData.overwatch).then((overwatchData) => {
             controller.gdata.overwatch = overwatchData.data;
           });
