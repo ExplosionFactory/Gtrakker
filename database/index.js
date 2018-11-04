@@ -51,7 +51,6 @@ const save = (dataObj) => {
   userObj.overwatch = {};
   userObj.overwatch.username = dataObj.usernames.overUser;
 
- 
   const user = new User(userObj);
   user.save((err) => {
     if (err) {

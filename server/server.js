@@ -29,17 +29,15 @@ app.post('/signup', (req, res) => {
       db.save(req.body);
       res.end();
     } else {
-      // send true if the username already exists
-      console.log('already exists');
       res.send('true');
     }
   });
 });
 
-app.post('/end', (req, res) =>{
+app.post('/end', (req, res) => {
   req.session.destroy();
   res.send('ok');
-}); 
+});
 
 app.post('/login', (req, res) => {
   const username = req.body.loginName;
@@ -132,7 +130,7 @@ app.post('/news', (req, res) => {
     });
 });
 
-app.get('/loggedin', (req , res) => {
+app.get('/loggedin', (req, res) => {
   console.log(req.session);
   if (!req.session.user) {
     res.send('');
@@ -171,9 +169,8 @@ app.post('/suggested', (req, res) => {
       'Accept': 'application/vnd.twitchtv.v5+json',
     },
   };
-  axios.get('https://api.twitch.tv/kraken/games/top',config)
+  axios.get('https://api.twitch.tv/kraken/games/top', config)
     .then((response) => {
-     
       res.send(response.data);
     }).catch((err) => {
       res.send(err);
