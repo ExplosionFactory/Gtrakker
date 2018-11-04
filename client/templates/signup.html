@@ -3,7 +3,9 @@
         <img ng-src="{{imageAddress}}" ng-style="{'width': '400px','margin': '-10px -10px 10px 650px'}" alt="logo"/> <br />
         <div class="row">
           <div class="col-md-12">
-
+              <button type="submit" ng-click="back()" style="background-color: green; color: black; margin: 0px 0px 0px 700px" class="btn">
+              Already have an account? Click to Login  
+              </button>
             <div ng-show="myValue" style="color: red"><h4>Username already exists!!!!!!</h4></div>
             <div ng-show="myValue" class="ng-hide"></div>
 

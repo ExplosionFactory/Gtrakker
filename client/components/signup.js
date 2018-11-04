@@ -8,6 +8,9 @@ angular.module('gtrak')
   }).controller('signUpCtrl', function ($scope, $http, $location) {
     $scope.imageAddress = '../../images/gtrakker_logo.png';
     $scope.myValue = false;
+    $scope.back = () => {
+      $location.path('/login');
+    };
     $scope.submit = () => {
       $http({
         method: 'POST',

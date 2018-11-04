@@ -10,4 +10,7 @@ angular.module('gtrak')
     $scope.submit = () => {
       console.log('game', $scope.updateGame, 'user', $scope.updateName, 'plat', $scope.updatePlat);
     };
+    $scope.back = () => {
+      $location.path('/app');
+    };
   });
