@@ -7,7 +7,11 @@ angular.module('gtrak')
     },
     templateUrl: 'templates/settings.html',
   }).controller('accountCtrl', function ($http, $location, $scope) {
+    $scope.delete = () => {
+      $location.path('/delete');
+    };
     $scope.submit = () => {
+      $http.post("/update", {game: $scope.updateGame, user: $scope.updateName, platform: $scope.updatePlat });
       console.log('game', $scope.updateGame, 'user', $scope.updateName, 'plat', $scope.updatePlat);
     };
   });

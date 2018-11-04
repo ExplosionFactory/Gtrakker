@@ -33,7 +33,10 @@ app.post('/signup', (req, res) => {
     }
   });
 });
-
+app.post('/update', (req, res) => {
+  console.log(req.body);
+  res.end();
+});
 app.get('/delete', (req, res) => {
   console.log(req.session.user);
   const username = req.session.user;
