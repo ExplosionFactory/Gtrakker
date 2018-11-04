@@ -34,8 +34,21 @@ app.post('/signup', (req, res) => {
   });
 });
 app.post('/update', (req, res) => {
-  console.log(req.body);
-  res.end();
+  console.log(req.body.game);
+  if (req.body.game === 'battlefield') {
+    db.updateByUsernameBattle(req.session.user, req.body.user, req.body.platform);
+    res.end();
+  } else if (req.body.game === 'cod') {
+    console.log('cod');
+    db.updateByUsernameCod(req.session.user, req.body.user, req.body.platform);
+    res.end();
+  } else if (req.body.game === 'fortnite') {
+    db.updateByUsernameFort(req.session.user, req.body.user, req.body.platform);
+    res.end();
+  } else if (req.body.game === 'overwatch') {
+    db.updateByUsernameOverwatch(req.session.user,req.body.user);
+    res.end();
+  }
 });
 app.get('/delete', (req, res) => {
   console.log(req.session.user);

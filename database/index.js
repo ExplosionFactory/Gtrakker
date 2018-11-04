@@ -65,14 +65,35 @@ const getUserbyUsername = name => User.findOne({ loginName: name });
 
 const deleteByUsername = name => User.findOne({ loginName: name }).remove().exec();
 
-const updateByUsername = (name, game, user, plat) => {
+const updateByUsernameBattle = (name, user, plat) => {
   User.updateOne(
     { loginName: name },
-    { $set: { ${game}: { platform: plat, username: user } } },
+    { $set: { battlefield: { platform: plat, username: user } } },
+  );
+};
+const updateByUsernameFort = (name, user, plat) => {
+  User.updateOne(
+    { loginName: name },
+    { $set: { fortnite: { platform: plat, username: user } } },
+  );
+};
+const updateByUsernameCod = (name, user, plat) => {
+  User.updateOne(
+    { loginName: name },
+    { $set: { cod: { platform: plat, username: user } } },
+  );
+};
+const updateByUsernameOverwatch = (name, user) => {
+  User.updateOne(
+    { loginName: name },
+    { $set: { overwatch: { username: user } } },
   );
 };
 
 module.exports.save = save;
 module.exports.getUserbyUsername = getUserbyUsername;
 module.exports.deleteByUsername = deleteByUsername;
-module.exports.updateByUsername = updateByUsername;
+module.exports.updateByUsernameOverwatch = updateByUsernameOverwatch;
+module.exports.updateByUsernameCod = updateByUsernameCod;
+module.exports.updateByUsernameBattle = updateByUsernameBattle;
+module.exports.updateByUsernameFort = updateByUsernameFort;
