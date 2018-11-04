@@ -5,11 +5,12 @@ angular.module('gtrak')
   .component('navbar', {
     bindings: {},
     templateUrl: 'templates/navbar.html',
-  }).controller('navCtrl', function ($scope, $location) {
+  }).controller('navCtrl', function ($scope, $http, $location) {
     $scope.imageAddress = '../../images/gtrakker_logo.png';
     $scope.logout = () => {
-      // need to destroy session here
-      // req.session.destroy(); or req.session = null;
-      $location.path('/splash');
+      $http.post('/end').then((data) =>{
+        console.log(data);
+        $location.path('/splash');
+      });
     };
   });

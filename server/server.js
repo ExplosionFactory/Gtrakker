@@ -28,6 +28,11 @@ app.post('/signup', (req, res) => {
   res.end();
 });
 
+app.post('/end', (req, res) =>{
+  req.session.destroy();
+  res.send('ok');
+}); 
+
 app.post('/login', (req, res) => {
   const username = req.body.loginName;
   const password = req.body.loginPassword;
@@ -55,15 +60,13 @@ app.post('/bf4', (req, res) => {
 
       res.send(response.data);
     }).catch((err) => {
-      console.log(err);
-      res.send('heyyy');
+      res.send(err);
     });
 });
 
 app.post('/cod', (req, res) => {
   let platform;
   const user = req.body.username;
-  console.log(req.body);
   if (req.body.platform === 'psn') {
     platform = 2;
   } else if (req.body.platform === 'xbox') {
@@ -80,13 +83,11 @@ app.post('/cod', (req, res) => {
     .then((response) => {
       res.send(response.data);
     }).catch((err) => {
-      console.log(err);
       res.send(err);
     });
 });
 
 app.post('/fort', (req, res) => {
-  console.log(req.body);
   const platform = req.body.platform;
   const user = req.body.username;
   const config = {
@@ -98,7 +99,6 @@ app.post('/fort', (req, res) => {
     .then((response) => {
       res.send(response.data.lifeTimeStats);
     }).catch((err) => {
-      console.log(err);
       res.send(err);
     });
 });
@@ -110,7 +110,7 @@ app.post('/over', (req, res) => {
     .then((response) => {
       res.send(response.data);
     }).catch((err) => {
-      console.log(err);
+      res.send(err);
       res.send(err);
     });
 });
@@ -125,6 +125,14 @@ app.post('/news', (req, res) => {
     });
 });
 
+app.get('/loggedin', (req , res) => {
+  console.log(req.session);
+  if (!req.session.user) {
+    res.send('');
+  } else {
+    res.send('ok');
+  }
+});
 
 app.get('/appUser', (req, res) => {
   const userName = req.session.user;
@@ -158,7 +166,7 @@ app.post('/suggested', (req, res) => {
   };
   axios.get('https://api.twitch.tv/kraken/games/top',config)
     .then((response) => {
-      console.log(response);
+     
       res.send(response.data);
     }).catch((err) => {
       res.send(err);
