@@ -34,6 +34,9 @@ app.post('/signup', (req, res) => {
   });
 });
 
+app.post('/delete', (req, res) => {
+});
+
 app.post('/end', (req, res) => {
   req.session.destroy();
   res.send('ok');
@@ -58,7 +61,6 @@ app.post('/login', (req, res) => {
 });
 
 app.post('/bf4', (req, res) => {
-  console.log(req.body);
   const plat = req.body.platform;
   const user = req.body.username;
   axios.get(`http://api.bf4stats.com/api/playerInfo?plat=${plat}&name=${user}&output=json`)
@@ -109,7 +111,6 @@ app.post('/fort', (req, res) => {
 });
 
 app.post('/over', (req, res) => {
-  console.log(req.body);
   const user = req.body.username;
   axios.get(`https://ow-api.com/v1/stats/pc/us/${user}/profile`)
     .then((response) => {
@@ -131,7 +132,6 @@ app.post('/news', (req, res) => {
 });
 
 app.get('/loggedin', (req, res) => {
-  console.log(req.session);
   if (!req.session.user) {
     res.send('');
   } else {
