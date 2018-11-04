@@ -150,7 +150,13 @@ app.post('/twitch', (req, res) => {
 });
 
 app.post('/suggested', (req, res) => {
-  axios.get('https://api.twitch.tv/kraken/games/top')
+  const config = {
+    headers: {
+      'Client-ID': 'eutum6yldtscmam5mu1s02bakosx69',
+      'Accept': 'application/vnd.twitchtv.v5+json',
+    },
+  };
+  axios.get('https://api.twitch.tv/kraken/games/top',config)
     .then((response) => {
       console.log(response);
       res.send(response.data);
