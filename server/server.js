@@ -34,7 +34,11 @@ app.post('/signup', (req, res) => {
   });
 });
 
-app.post('/delete', (req, res) => {
+app.get('/delete', (req, res) => {
+  console.log(req.session.user);
+  const username = req.session.user;
+  db.deleteByUsername(username);
+  res.end();
 });
 
 app.post('/end', (req, res) => {
