@@ -3,16 +3,14 @@
 // eslint-disable-next-line no-undef
 angular.module('gtrak')
   .component('navbar', {
-    bindings: {},
+    bindings: {
+      search: '<',
+    },
     templateUrl: 'templates/navbar.html',
   }).controller('navCtrl', function ($scope, $http, $location) {
     $scope.imageAddress = '../../images/gtrakker_logo.png';
-    $scope.search = () => {
-      console.log($scope.searchUser);
-    };
     $scope.logout = () => {
       $http.post('/end').then((data) => {
-        // console.log(data);
         $location.path('/splash');
       });
     };

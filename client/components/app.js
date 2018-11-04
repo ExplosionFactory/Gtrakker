@@ -10,8 +10,51 @@ angular.module('gtrak')
     this.gdata = {};
     const controller = this;
 
+    this.search = (user) => {
+      $http.post('/appUser', { username: user }).then((data) => {
+        this.userData = data.data;
+      }).then(() => {
+        if (controller.userData.fortnite.username !== null && controller.userData.fortnite.platform !== null) {
+          $http.post('/fort', controller.userData.fortnite).then((fortniteData) => {
+            controller.gdata.fortnite = fortniteData.data;
+          });
+        } else {
+          controller.gdata.fortnite = null;
+        }
+        if (controller.userData.cod.username !== null && controller.userData.cod.platform !== null) {
+          $http.post('/cod', controller.userData.cod).then((codData) => {
+            controller.gdata.cod = codData.data.data.stats;
+          });
+        } else {
+          controller.gdata.cod = null;
+        }
+        if (controller.userData.battlefield.username !== null && controller.userData.battlefield.platform !== null) {
+          $http.post('/bf4', controller.userData.battlefield).then((battleData) => {
+            controller.gdata.battle = battleData.data;
+          });
+        } else {
+          controller.gdata.battle = null;
+        }
+        if (controller.userData.overwatch.username !== null) {
+          $http.post('/over', controller.userData.overwatch).then((overwatchData) => {
+            controller.gdata.overwatch = overwatchData.data;
+          });
+        } else {
+          controller.gdata.overwatch = null;
+        }
+        $http.post('/news').then((newsData) => {
+          controller.gdata.news = newsData.data;
+        });
+        $http.post('/twitch').then((twitchData) => {
+          controller.gdata.twitch = twitchData.data.clips;
+        });
+        $http.post('/suggested').then((suggestedData) => {
+          controller.gdata.suggested = suggestedData.data;
+        });
+      });
+    };
+
     $http.get('/loggedin').then((data) => {
-      console.log(data);
       if (data.data === '') {
         $location.path('/splash');
       } else {
