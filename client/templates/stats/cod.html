@@ -3,12 +3,12 @@
     BLOPS 4
   </h2>
   <p>
-  {{$ctrl.data[0].metadata.name}} : {{$ctrl.data[0].displayValue}} <br />
-  {{$ctrl.data[1].metadata.name}} : {{$ctrl.data[1].displayValue}} <br />
-  {{$ctrl.data[2].metadata.name}} : {{$ctrl.data[2].displayValue}} <br />
-  {{$ctrl.data[3].metadata.name}} : {{$ctrl.data[3].displayValue}} <br />
-  {{$ctrl.data[15].metadata.name}} : {{$ctrl.data[15].displayValue}} <br />
-  {{$ctrl.data[16].metadata.name}} : {{$ctrl.data[16].displayValue}} <br />
+  Prestige : {{$ctrl.data[0].displayValue || N/A}} <br />
+  KD Ratio : {{$ctrl.data[1].displayValue || N/A}} <br />
+  Kills : {{$ctrl.data[2].displayValue || N/A}} <br />
+  Deaths : {{$ctrl.data[3].displayValue || N/A}} <br />
+  Wins : {{$ctrl.data[15].displayValue || N/A}} <br />
+  Losses : {{$ctrl.data[16].displayValue || N/A}} <br />
   </p>
   <img ng-src="{{imgAddress}}" ng-style="{'width':'200px', 'margin':'-450px 0px -200px 800px'}" alt="cod logo"/>    <p>
   </div>

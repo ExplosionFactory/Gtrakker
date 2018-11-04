@@ -3,11 +3,11 @@
     Battlefield 4
   </h2>
   <p>
-    Rank: {{$ctrl.data.stats.rank}} <br />
-    Wins: {{$ctrl.data.stats.numWins}} <br /> 
-    Win %: {{$ctrl.data.stats.extra.wlr}} <br />
-    Kills: {{$ctrl.data.stats.kills}} <br />  
-    K/D: {{$ctrl.data.stats.extra.kdr}} <br /> 
+    Rank: {{$ctrl.data.stats.rank || N/A}} <br />
+    Wins: {{$ctrl.data.stats.numWins || N/A}} <br /> 
+    Win %: {{$ctrl.data.stats.extra.wlr || N/A}} <br />
+    Kills: {{$ctrl.data.stats.kills || N/A}} <br />  
+    K/D: {{$ctrl.data.stats.extra.kdr || N/A}} <br /> 
   </p>
   <img ng-src="{{imgAddress}}" ng-style="{'width':'500px', 'margin':'-450px 0px -200px 600px'}" alt="battle logo"/>
   </div>

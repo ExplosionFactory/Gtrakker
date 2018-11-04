@@ -1,12 +1,12 @@
 <div class="jumbotron">
   <h2>Overwatch</h2>
   <p>
-    Prestige: {{$ctrl.data.prestige}} <br />
-    Level: {{$ctrl.data.level}} <br />
-    Competitive Wins: {{$ctrl.data.competitiveStats.games.won}} <br />
-    Competitive Gold Medals: {{$ctrl.data.competitiveStats.awards.medalsGold}} <br />
-    Quick Play Wins: {{$ctrl.data.quickPlayStats.games.won}} <br />
-    Quick Play Gold Medals: {{$ctrl.data.quickPlayStats.awards.medalsGold}} <br />
+    Prestige: {{$ctrl.data.prestige || N/A}} <br />
+    Level: {{$ctrl.data.level || N/A}} <br />
+    Competitive Wins: {{$ctrl.data.competitiveStats.games.won || N/A}} <br />
+    Competitive Gold Medals: {{$ctrl.data.competitiveStats.awards.medalsGold || N/A}} <br />
+    Quick Play Wins: {{$ctrl.data.quickPlayStats.games.won || N/A}} <br />
+    Quick Play Gold Medals: {{$ctrl.data.quickPlayStats.awards.medalsGold || N/A}} <br />
   </p>
   <img ng-src="{{imgAddress}}" ng-style="{'width':'300px', 'margin':'-450px 0px -200px 750px'}" alt="cod logo"/>    <p>
 </div>
