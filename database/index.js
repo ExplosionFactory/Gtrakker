@@ -65,6 +65,14 @@ const getUserbyUsername = name => User.findOne({ loginName: name });
 
 const deleteByUsername = name => User.findOne({ loginName: name }).remove().exec();
 
+const updateByUsername = (name, game, user, plat) => {
+  User.updateOne(
+    { loginName: name },
+    { $set: { ${game}: { platform: plat, username: user } } },
+  );
+};
+
 module.exports.save = save;
 module.exports.getUserbyUsername = getUserbyUsername;
 module.exports.deleteByUsername = deleteByUsername;
+module.exports.updateByUsername = updateByUsername;
