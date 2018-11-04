@@ -3,5 +3,11 @@ angular.module('gtrak')
     bindings: {
     },
     templateUrl: 'templates/delete.html',
-  }).controller('deleteCtrl', () => {
-  });
+  }).controller('deleteCtrl', function ($http, $location, $scope){
+    $scope.delete = () => {
+    console.log("delete")
+    $http.get('/delete').then(() => {
+      $location.path('/splash');
+    });
+    };
+    });
