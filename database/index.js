@@ -63,7 +63,7 @@ const save = (dataObj) => {
 
 const getUserbyUsername = name => User.findOne({ loginName: name });
 
-const deleteByUsername = name => getUserbyUsername(name).remove();
+const deleteByUsername = name => User.remove({ loginName: { loginName: name } });
 
 module.exports.save = save;
 module.exports.getUserbyUsername = getUserbyUsername;
