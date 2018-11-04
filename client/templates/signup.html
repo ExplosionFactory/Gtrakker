@@ -3,6 +3,10 @@
         <img ng-src="{{imageAddress}}" ng-style="{'width': '400px','margin': '-10px -10px 10px 650px'}" alt="logo"/> <br />
         <div class="row">
           <div class="col-md-12">
+
+            <div ng-show="myValue" style="color: red"><h4>Username already exists!!!!!!</h4></div>
+            <div ng-show="myValue" class="ng-hide"></div>
+
             <form role="form">
               <div class="form-group">
                 <label for="loginName" style="color: cornsilk"> 

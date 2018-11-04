@@ -4,7 +4,7 @@ const session = require('express-session');
 const bcrypt = require('bcrypt');
 
 const app = express();
-const port = 3000;
+const port = 80;
 const axios = require('axios');
 const bodyParser = require('body-parser');
 const db = require('../database/index.js');
@@ -24,8 +24,16 @@ app.use(session({
 }));
 
 app.post('/signup', (req, res) => {
-  db.save(req.body);
-  res.end();
+  db.getUserbyUsername(req.body.loginName).then((user) => {
+    if (user === null) {
+      db.save(req.body);
+      res.end();
+    } else {
+      // send true if the username already exists
+      console.log('already exists');
+      res.send('true');
+    }
+  });
 });
 
 app.post('/end', (req, res) =>{
@@ -57,7 +65,6 @@ app.post('/bf4', (req, res) => {
   const user = req.body.username;
   axios.get(`http://api.bf4stats.com/api/playerInfo?plat=${plat}&name=${user}&output=json`)
     .then((response) => {
-
       res.send(response.data);
     }).catch((err) => {
       res.send(err);

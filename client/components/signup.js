@@ -7,6 +7,7 @@ angular.module('gtrak')
     templateUrl: 'templates/signup.html',
   }).controller('signUpCtrl', function ($scope, $http, $location) {
     $scope.imageAddress = '../../images/gtrakker_logo.png';
+    $scope.myValue = false;
     $scope.submit = () => {
       $http({
         method: 'POST',
@@ -15,19 +16,24 @@ angular.module('gtrak')
           loginName: $scope.loginName,
           loginPass: $scope.loginPass,
           usernames: {
-            battleUser: $scope.battleUser,
-            codUser: $scope.codUser,
-            fortUser: $scope.fortUser,
-            overUser: $scope.overUser,
+            battleUser: $scope.battleUser || null,
+            codUser: $scope.codUser || null,
+            fortUser: $scope.fortUser || null,
+            overUser: $scope.overUser || null,
           },
           platforms: {
-            battlePlat: $scope.battlePlat,
-            codPlat: $scope.codPlat,
-            fortPlat: $scope.fortPlat,
-            overPlat: $scope.overPlat,
+            battlePlat: $scope.battlePlat || null,
+            codPlat: $scope.codPlat || null,
+            fortPlat: $scope.fortPlat || null,
+            overPlat: $scope.overPlat || null,
           },
         },
+      }).then((data) => {
+        if (data.data === 'true') {
+          $scope.myValue = true;
+        } else {
+          $location.path('/login');
+        }
       });
-      $location.path('/login');
     };
   });
