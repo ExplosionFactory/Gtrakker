@@ -24,8 +24,16 @@ app.use(session({
 }));
 
 app.post('/signup', (req, res) => {
-  db.save(req.body);
-  res.end();
+  db.getUserbyUsername(req.body.loginName).then((user) => {
+    if (user === null) {
+      db.save(req.body);
+      res.end();
+    } else {
+      // send true if the username already exists
+      console.log('already exists');
+      res.send('true');
+    }
+  });
 });
 
 app.post('/login', (req, res) => {
@@ -52,7 +60,6 @@ app.post('/bf4', (req, res) => {
   const user = req.body.username;
   axios.get(`http://api.bf4stats.com/api/playerInfo?plat=${plat}&name=${user}&output=json`)
     .then((response) => {
-
       res.send(response.data);
     }).catch((err) => {
       console.log(err);
