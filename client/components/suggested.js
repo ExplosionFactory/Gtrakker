@@ -1,7 +1,9 @@
 // eslint-disable-next-line no-undef
 angular.module('gtrak')
   .component('suggested', {
-    bindings: {},
+    bindings: {
+      data: '<',
+    },
     templateUrl: 'templates/suggested.html',
   }).controller('suggestedCtrl', () => {
   });

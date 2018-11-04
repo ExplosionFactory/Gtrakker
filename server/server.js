@@ -149,4 +149,14 @@ app.post('/twitch', (req, res) => {
     });
 });
 
+app.post('/suggested', (req, res) => {
+  axios.get('https://api.twitch.tv/kraken/games/top')
+    .then((response) => {
+      console.log(response);
+      res.send(response.data);
+    }).catch((err) => {
+      res.send(err);
+    });
+});
+
 app.listen(port, () => console.log(`now listen here u little port ${port}`));
