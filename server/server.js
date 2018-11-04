@@ -4,7 +4,7 @@ const session = require('express-session');
 const bcrypt = require('bcrypt');
 
 const app = express();
-const port = 80;
+const port = 3000;
 const axios = require('axios');
 const bodyParser = require('body-parser');
 const db = require('../database/index.js');
