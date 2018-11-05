@@ -16,6 +16,9 @@ angular.module('gtrak')
     $scope.logout = () => {
       $http.post('/end').then((data) => {
         $location.path('/splash');
-      });
+      });  
+    };
+    $scope.cod = () => {
+      $location.path('/cod');
     };
   });

@@ -27,6 +27,12 @@ const userSchema = mongoose.Schema({
     username: String,
   },
 });
+const messageSchema = mongoose.Schema({
+  game: String,
+  userName: String,
+  message: String,
+})
+const Message =  mongoose.model('Message', messageSchema);
 
 const User = mongoose.model('User', userSchema);
 
