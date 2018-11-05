@@ -8,7 +8,7 @@ angular.module('gtrak')
     templateUrl: 'templates/delete.html',
   }).controller('deleteCtrl', function ($http, $location, $scope) {
     $scope.back = () => {
-      $location.path('/app');
+      $location.path('/account');
     };
 
     $http.get('/loggedin').then((data) => {
