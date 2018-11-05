@@ -1,13 +1,12 @@
+/* eslint-disable no-undef */
 /* eslint-disable prefer-arrow-callback */
-/* eslint-disable func-names */
-// eslint-disable-next-line no-undef
 angular.module('gtrak')
   .component('navbar', {
     bindings: {
       search: '<',
     },
     templateUrl: 'templates/navbar.html',
-  }).controller('navCtrl', function ($scope, $http, $location) {
+  }).controller('navCtrl', function navCtrl($scope, $http, $location) {
     $scope.imageAddress = '../../images/gtrakker_logo.png';
     $scope.myValue = false;
     $scope.account = () => {
@@ -16,9 +15,9 @@ angular.module('gtrak')
     $scope.logout = () => {
       $http.post('/end').then((data) => {
         $location.path('/splash');
-      });  
+      });
     };
-    $scope.cod = () => {
-      $location.path('/cod');
+    $scope.forum = () => {
+      $location.path('/forum');
     };
   });

@@ -25,9 +25,9 @@ const app = angular.module('gtrak', ['ngRoute']).config(function ($routeProvider
       templateUrl: 'templates/settings.html',
       controller: 'accountCtrl',
     })
-    .when('/cod', {
-      templateUrl: 'templates/codforum.html',
-      controller: 'codForumCtrl',
+    .when('/forum', {
+      templateUrl: 'templates/forum.html',
+      controller: 'forumCtrl',
     })
     .otherwise({
       redirectTo: '/',
