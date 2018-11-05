@@ -3,7 +3,13 @@
         <div class="row">
           <div class="col-md-12">
             <h3 style="color: red">Are you sure you want to delete your account?</h3>
-            <button type="submit" ng-click="delete()" style="background-color: red; color: black; margin: 10px 5px 5px 100px" class="btn btn-primary">
+            <div class="form-group">
+              <label for="loginPass" style="color: cornsilk">
+                Password
+              </label>
+              <input type="password" ng-model="loginPassword" class="form-control" id="loginPassword" />
+            </div>  
+            <button type="submit" ng-click="delete()" style="background-color: whitesmoke; color: black; margin: 10px 5px 5px 100px" class="btn btn-primary">
               Delete Account
             </button>
 

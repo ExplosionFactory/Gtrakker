@@ -4,7 +4,7 @@ const session = require('express-session');
 const bcrypt = require('bcrypt');
 
 const app = express();
-const port = 80;
+const port = 3000;
 const axios = require('axios');
 const bodyParser = require('body-parser');
 const db = require('../database/index.js');
@@ -51,12 +51,23 @@ app.post('/update', (req, res) => {
     res.end();
   }
 });
+app.post('/delete', (req, res) => {
+  const username = req.session.user
+  const password = req.body.password
+  db.getUserbyUsername(username).then((user) => {
+    bcrypt.compare(password, user.loginPass, (err, resolve) => {
+      if (err) {
+        console.log(err);
+      } else if (resolve) {
+        console.log(req.session.user);
+        const username = req.session.user;
+        db.deleteByUsername(username);
+        req.session.destroy();
+        res.end();
+      }
+    });
+  });
 
-app.get('/delete', (req, res) => {
-  console.log(req.session.user);
-  const username = req.session.user;
-  db.deleteByUsername(username);
-  res.end();
 });
 
 app.post('/end', (req, res) => {
