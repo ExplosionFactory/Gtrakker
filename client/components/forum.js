@@ -5,15 +5,22 @@ angular.module('gtrak')
     bindings: {
     },
     templateUrl: 'templates/forum.html',
-  }).controller('forumCtrl', function ($scope, $location, $http) {
+  }).controller('forumCtrl', function ($scope, $location, $http, $window) {
+    $http.get('/loggedin').then((data) => {
+      if (data.data === '') {
+        $location.path('/splash');
+      }
+    });
     $scope.data = {};
     $http.get('/forum').then((messages) => {
       $scope.data.messages = messages.data;
     });
     $scope.submit = () => {
-      $http.post('/forum',{mess:$scope.message}).then(() =>{
+      $http.post('/forum',{mess:$scope.message}).then(() => {
         $http.get('/forum').then((messages) => {
-          this.data = messages.data;
+          console.log(messages)
+          $scope.data.messages = messages.data;
+          $window.location.reload();
         });
       });
     };
