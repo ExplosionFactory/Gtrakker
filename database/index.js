@@ -52,6 +52,16 @@ const saveMsg = (dataObj) => {
   });
 };
 
+const findMsgByGame = (findGame) => {
+  Message.find({ game: findGame }, (err, docs) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(`found ${docs}`);
+    }
+  });
+};
+
 const User = mongoose.model('User', userSchema);
 
 const save = (dataObj) => {
@@ -120,6 +130,7 @@ const updateByUsernameOverwatch = (name, user) => {
 
 module.exports.save = save;
 module.exports.saveMsg = saveMsg;
+module.exports.findMsgByGame = findMsgByGame;
 module.exports.getUserbyUsername = getUserbyUsername;
 module.exports.deleteByUsername = deleteByUsername;
 module.exports.updateByUsernameOverwatch = updateByUsernameOverwatch;
