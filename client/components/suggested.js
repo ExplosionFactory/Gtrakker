@@ -5,5 +5,6 @@ angular.module('gtrak')
       data: '<',
     },
     templateUrl: 'templates/suggested.html',
-  }).controller('suggestedCtrl', () => {
+  }).controller('suggestedCtrl', ($scope) => {
+    $scope.trivioke = '../../images/trivioke.png';
   });
