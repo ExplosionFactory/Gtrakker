@@ -5,11 +5,7 @@ angular.module('gtrak')
       search: '<',
     },
     templateUrl: 'templates/navbar.html',
-<<<<<<< HEAD
-  }).controller('navCtrl',($scope, $http, $location) => {
-=======
   }).controller('navCtrl', function navCtrl($scope, $http, $location) {
->>>>>>> 95ef16d426b30168e22d951c432dc6315843b716
     $scope.imageAddress = '../../images/gtrakker_logo.png';
     $scope.myValue = false;
     $scope.account = () => {
