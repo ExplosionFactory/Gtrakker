@@ -1,4 +1,4 @@
-<div ng-controller="accountCtrl">
+<div ng-controller="accountCtrl" style="margin: 10px 10px 10px 700px">
 
   <h2 style="color: cornsilk">
     Account Settings
@@ -9,7 +9,7 @@
   </h4>
 
   <div>
-    <input type="text" ng-model="updateGame" id="updateName" />
+    <input type="text" ng-model="updateGame" id="updateName" style="width: 500px"/>
   </div>
   <br>
   <form role="form">
@@ -17,24 +17,24 @@
         <label for="updateName" style="color: cornsilk"> 
           Update Username
         </label> <br>
-        <input type="text" ng-model="updateName" id="updateName" />
+        <input type="text" ng-model="updateName" id="updateName" style="width: 500px"/>
       </div>
 
       <div class="form-group">
         <label for="updatePass" style="color: cornsilk"> 
           Update Platform
         </label><br>
-        <input type="text" ng-model="updatePlat" id="updatePlatform" />
+        <input type="text" ng-model="updatePlat" id="updatePlatform" style="width: 500px"/>
       </div>
 
-      <button type="submit" ng-click="submit()" style="background-color: whitesmoke; color: black; margin: 10px 5px 5px 10px" class="btn btn-primary">
+      <button type="submit" ng-click="submit()" style="background-color: whitesmoke; color: black; margin: 10px 5px 5px 5px" class="btn btn-primary">
         Submit
       </button>
-      <button type="submit" ng-click="back()" style="background-color: green; color: black; margin: 10px 5px 5px 10px" class="btn">
+      <button type="submit" ng-click="back()" style="background-color: green; color: black; margin: 10px 5px 5px 265px" class="btn">
         Back To Dashboard
       </button>
     </form>
-    <button type="submit"ng-click="delete()" style="background-color: red; color: black; margin: 20px 5px 5px 10px" class="btn">
+    <button type="submit"ng-click="delete()" style="background-color: red; color: black; margin: 20px 5px 5px 170px" class="btn">
       Delete Account
     </button>
 </div>

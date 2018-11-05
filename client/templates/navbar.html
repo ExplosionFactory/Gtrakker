@@ -7,21 +7,21 @@
         <div ng-show="myValue" style="color: red"><h4>User not found</h4></div>
         <div ng-show="myValue" class="ng-hide"></div>
 
-        <h4 style="color: whitesmoke">
+        <h4 style="color: whitesmoke; margin: 0px 0px 0px 10px">
           Search for friend's stats
         </h4>
-        <input type="text" ng-model="searchUser" />
-        <button type="button" ng-click="$ctrl.search(searchUser)" style="background-color: whitesmoke; color: black; margin: 2px 5px 5px 10px" class="btn btn-outline-warning">
+        <input type="text" ng-model="searchUser" style="margin: 0px 0px 0px 10px"/>
+        <button type="button" ng-click="$ctrl.search(searchUser)" style="background-color: whitesmoke; color: black; margin: 2px 5px 5px 10px; max-width: 300px" class="btn">
           Search
         </button>
-        <button type="button" ng-click="logout()" style="background-color: whitesmoke; color: black; margin: 10px 0px 0px 1500px" class="btn btn-outline-warning">
+        <button type="button" ng-click="logout()" style="background-color: whitesmoke; color: black; margin: 10px 0px 0px 1500px" class="btn">
           Logout
         </button>
-        <button type="button" ng-click="account()" style="background-color: whitesmoke; color: black; margin: -55px 0px 0px 1602px" class="btn btn-outline-warning">
+        <button type="button" ng-click="account()" style="background-color: whitesmoke; color: black; margin: -55px 0px 0px 1607px; max-width: 300px" class="btn">
           Account Settings
         </button>
-        <button type="button" ng-click="forum()" style="background-color: whitesmoke; color: black; margin: -95px 0px 0px 1517px" class="btn btn-outline-warning">
-          Forums
+        <button type="button" ng-click="forum()" style="background-color: whitesmoke; color: black; margin: -95px 0px 0px 1483px; max-width: 300px" class="btn">
+          General Chat
         </button>
       </div> 
     </div>

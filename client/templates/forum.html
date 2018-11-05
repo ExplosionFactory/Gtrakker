@@ -1,14 +1,19 @@
-<div class="jumbotron" ng-controller="forumCtrl">
-  <h3>Forum Messages</h3>
-  <div ng-repeat="message in data.messages">
-    {{message.userName}}: {{message.message}} <br />
+<img ng-src="{{imageAddress}}" ng-style="{'width': '400px','margin': '-50px 10px 5px 700px'}" alt="logo"/> <br />
+<h2 style="color: whitesmoke; margin: 0px 0px 0px 360px"><u>General Chat</u></h2>
+<div ng-controller="forumCtrl">
+  <div class="container" style="border-style:solid; background-color: whitesmoke">
+    <div>
+      <div ng-repeat="message in data.messages">
+        <b>{{message.userName}}</b>: {{message.message}} <br />
+      </div>
+    </div>
   </div>
 </div>
-<input type="text" ng-model="message" class="form-control"/> 
-<button type="submit" ng-click="submit()" style="background-color: green; color: black; margin: 10px 5px 5px 800px" class="btn">
+<input type="text" ng-model="message" style="width: 700px; margin: 0px 0px 0px 600px"/> 
+<button type="submit" ng-click="submit()" style="background-color: green; color: black; margin: 10px 5px 5px 900px" class="btn">
   Submit
 </button>
 <br />
-<button type="submit" ng-click="back()" style="background-color: green; color: black; margin: 10px 5px 5px 760px" class="btn">
+<button type="submit" ng-click="back()" style="background-color: green; color: black; margin: 10px 5px 5px 860px" class="btn">
   Back To Dashboard
 </button>

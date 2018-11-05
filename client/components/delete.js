@@ -7,6 +7,7 @@ angular.module('gtrak')
     },
     templateUrl: 'templates/delete.html',
   }).controller('deleteCtrl', function ($http, $location, $scope) {
+    $scope.imageAddress = '../../images/sad.png';
     $scope.back = () => {
       $location.path('/account');
     };
