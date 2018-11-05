@@ -1,12 +1,25 @@
 <div class="jumbotron">
+  <img ng-src="{{imgAddress}}" ng-style="{'width':'300px', 'margin':'0% 0% -20% 70%'}" alt="cod logo"/>    <p>
   <h2>Fortnite</h2>
   <p>
-    Score : {{$ctrl.data[6].value || N/A}} <br/>
-    Matches Played : {{$ctrl.data[7].value || N/A}} <br/>
-    Wins : {{$ctrl.data[8].value || N/A}} <br/>
-    Win % : {{$ctrl.data[9].value || N/A}} <br/>
-    Kills : {{$ctrl.data[10].value || N/A}} <br/>
-    K/D : {{$ctrl.data[11].value || N/A}} <br/>
+    Score: {{$ctrl.data[6].value || N/A}} <br/>
+    Matches Played: {{$ctrl.data[7].value || N/A}} <br/>
+    Wins: {{$ctrl.data[8].value || N/A}} <br/>
+    Win %: {{$ctrl.data[9].value || N/A}} <br/>
+    Kills: {{$ctrl.data[10].value || N/A}} <br/>
+    K/D: {{$ctrl.data[11].value || N/A}} <br/>
+
+    <button type="submit" ng-click="submit()" style="background-color: whitesmoke; color: black; margin: 0% 0px 0px 80%" class="btn btn-primary">
+      Show More Stats
+    </button>
+    <div ng-show="myValue" style="font-size: 150%">
+      Matches Placed in Top 3: {{$ctrl.data[1].value || N/A}} <br/>
+      Matches Placed in Top 5: {{$ctrl.data[0].value || N/A}} <br/>
+      Matches Placed in Top 6: {{$ctrl.data[2].value || N/A}} <br/>
+      Matches Placed in Top 10: {{$ctrl.data[3].value || N/A}} <br/>
+      Matches Placed in Top 12: {{$ctrl.data[4].value || N/A}} <br/>
+      Matches Placed in Top 25: {{$ctrl.data[5].value || N/A}} <br/>
+    </div>
+    <div ng-show="myValue" class="ng-hide"></div>
   </p>
-  <img ng-src="{{imgAddress}}" ng-style="{'width':'300px', 'margin':'-450px 0px -200px 750px'}" alt="cod logo"/>    <p>
   </div>

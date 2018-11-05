@@ -1,4 +1,5 @@
 <div class="jumbotron">
+  <img ng-src="{{imgAddress}}" ng-style="{'width':'300px', 'margin':'-2% 0% -20% 70%'}" alt="cod logo"/>    <p>
   <h2>Overwatch</h2>
   <p>
     Prestige: {{$ctrl.data.prestige || N/A}} <br />
@@ -7,6 +8,18 @@
     Competitive Gold Medals: {{$ctrl.data.competitiveStats.awards.medalsGold || N/A}} <br />
     Quick Play Wins: {{$ctrl.data.quickPlayStats.games.won || N/A}} <br />
     Quick Play Gold Medals: {{$ctrl.data.quickPlayStats.awards.medalsGold || N/A}} <br />
+    
+    <button type="submit" ng-click="submit()" style="background-color: whitesmoke; color: black; margin: 5% 0px 0px 80%" class="btn btn-primary">
+        Show More Stats
+      </button>
+      <div ng-show="myValue" style="font-size: 150%">
+        Rating: {{$ctrl.data.rating || N/A}} <br />
+        Total Wins: {{$ctrl.data.gamesWon || N/A}} <br />
+        Competitive Cards: {{$ctrl.data.competitiveStats.awards.cards || N/A}} <br />
+        Competitive Total Medals: {{$ctrl.data.competitiveStats.awards.medals || N/A}} <br />
+        Quickplay Cards: {{$ctrl.data.quickPlayStats.awards.cards || N/A}} <br />
+        Quickplay Total Medals: {{$ctrl.data.quickPlayStats.awards.medals || N/A}} <br />
+      </div>
+      <div ng-show="myValue" class="ng-hide"></div>
   </p>
-  <img ng-src="{{imgAddress}}" ng-style="{'width':'300px', 'margin':'-450px 0px -200px 750px'}" alt="cod logo"/>    <p>
 </div>

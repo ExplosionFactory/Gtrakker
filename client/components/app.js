@@ -96,4 +96,5 @@ angular.module('gtrak')
         });
       });
     };
+    console.log(this.gdata);
   });
