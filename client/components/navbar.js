@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-
-=======
 /* eslint-disable no-undef */
 /* eslint-disable prefer-arrow-callback */
->>>>>>> 95ef16d426b30168e22d951c432dc6315843b716
 angular.module('gtrak')
-  .component('navbar', {
     bindings: {
       search: '<',
     },
