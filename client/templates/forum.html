@@ -1,10 +1,14 @@
 <div class="jumbotron" ng-controller="forumCtrl">
+  <h3>Forum Messages</h3>
+  <div ng-repeat="message in data.messages">
+    {{message.userName}}: {{message.message}} <br />
+  </div>
 </div>
-<input type="text" ng-model="message" /> 
-<button type="submit" ng-click="submit()" style="background-color: green; color: black; margin: 10px 5px 5px 10px" class="btn">
+<input type="text" ng-model="message" class="form-control"/> 
+<button type="submit" ng-click="submit()" style="background-color: green; color: black; margin: 10px 5px 5px 800px" class="btn">
   Submit
 </button>
 <br />
-<button type="submit" ng-click="back()" style="background-color: green; color: black; margin: 10px 5px 5px 10px" class="btn">
+<button type="submit" ng-click="back()" style="background-color: green; color: black; margin: 10px 5px 5px 760px" class="btn">
   Back To Dashboard
 </button>
