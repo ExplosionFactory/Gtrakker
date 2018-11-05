@@ -27,12 +27,30 @@ const userSchema = mongoose.Schema({
     username: String,
   },
 });
+
 const messageSchema = mongoose.Schema({
   game: String,
   userName: String,
   message: String,
-})
-const Message =  mongoose.model('Message', messageSchema);
+});
+
+const Message = mongoose.model('Message', messageSchema);
+
+const saveMsg = (dataObj) => {
+  const msgObj = {};
+  msgObj.game = dataObj.game;
+  msgObj.userName = dataObj.name;
+  msgObj.message = dataObj.message;
+
+  const msg = new Message(msgObj);
+  msg.save((err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(`${msg} has been saved`);
+    }
+  });
+};
 
 const User = mongoose.model('User', userSchema);
 
@@ -101,6 +119,7 @@ const updateByUsernameOverwatch = (name, user) => {
 };
 
 module.exports.save = save;
+module.exports.saveMsg = saveMsg;
 module.exports.getUserbyUsername = getUserbyUsername;
 module.exports.deleteByUsername = deleteByUsername;
 module.exports.updateByUsernameOverwatch = updateByUsernameOverwatch;
