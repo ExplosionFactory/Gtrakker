@@ -4,10 +4,11 @@ angular.module('gtrak')
   .component('forum', {
     bindings: {
     },
-    templateUrl: 'templates/codforum.html',
+    templateUrl: 'templates/forum.html',
   }).controller('forumCtrl', function ($scope, $location, $http) {
+    $scope.data = {};
     $http.get('/forum').then((messages) => {
-      this.data = messages.data;
+      $scope.data.messages = messages.data;
     });
     $scope.submit = () => {
       $http.post('/forum',{mess:$scope.message}).then(() =>{
@@ -19,4 +20,5 @@ angular.module('gtrak')
     $scope.back = () => {
       $location.path('/app');
     };
+    console.log($scope.data);
   });
