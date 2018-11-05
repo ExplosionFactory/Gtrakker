@@ -22,7 +22,13 @@ app.use(session({
     path: '/',
   },
 }));
-
+app.post('/forum',(req,res) =>{
+  const userMessage = req.body.mess;
+  const userName = req.session.user;
+  const room = 'general';
+  db.saveMsg({ game: room, name: userName, message: userMessage });
+  res.send('ok');
+});
 app.post('/signup', (req, res) => {
   db.getUserbyUsername(req.body.loginName).then((user) => {
     if (user === null) {
