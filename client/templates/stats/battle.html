@@ -1,9 +1,9 @@
-<div class="jumbotron">
+<div class="jumbotron" style="background: rgba(180, 178, 178, 0.5)">
   <img ng-src="{{imgAddress}}" ng-style="{'width':'500px', 'margin':'0% 0% -20% 55%'}" alt="battle logo"/>
-  <h2>
+  <h2 style="color: whitesmoke">
     Battlefield 4
   </h2>
-  <p>
+  <p style="color: whitesmoke">
     Rank: {{$ctrl.data.stats.rank || N/A}} <br />
     Wins: {{$ctrl.data.stats.numWins || N/A}} <br /> 
     Win %: {{$ctrl.data.stats.extra.wlr || N/A}} <br />
@@ -13,7 +13,7 @@
     <button type="submit" ng-click="submit()" style="background-color: whitesmoke; color: black; margin: 0% 0px 0px 80%" class="btn btn-primary">
       Show More Stats
     </button>
-    <div ng-show="myValue" style="font-size: 150%">
+    <div ng-show="myValue" style="font-size: 150%; color: whitesmoke">
       Avenger Kills: {{$ctrl.data.stats.avengerKills || N/A}} <br />
       Deaths: {{$ctrl.data.stats.deaths || N/A}} <br />
       Losses: {{$ctrl.data.stats.numLosses || N/A}} <br />

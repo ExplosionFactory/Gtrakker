@@ -32,11 +32,11 @@ app.get('/forum', (req, res) => {
     res.end();
   });
 });
-app.post('/forum',(req,res) =>{
+app.post('/forum', (req, res) => {
   const userMessage = req.body.mess;
   const userName = req.session.user;
   const room = 'general';
-  db.saveMsg({ game: room, name: userName, message: userMessage })
+  db.saveMsg({ game: room, name: userName, message: userMessage });
   res.end();
 });
 app.post('/signup', (req, res) => {
@@ -68,8 +68,8 @@ app.post('/update', (req, res) => {
   }
 });
 app.post('/delete', (req, res) => {
-  const username = req.session.user
-  const password = req.body.password
+  const username = req.session.user;
+  const password = req.body.password;
   db.getUserbyUsername(username).then((user) => {
     bcrypt.compare(password, user.loginPass, (err, resolve) => {
       if (err) {
@@ -83,7 +83,6 @@ app.post('/delete', (req, res) => {
       }
     });
   });
-
 });
 
 app.post('/end', (req, res) => {
