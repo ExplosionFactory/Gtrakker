@@ -1,4 +1,5 @@
 <div class="jumbotron">
+  <img ng-src="{{imgAddress}}" ng-style="{'width':'500px', 'margin':'0% 0% -20% 55%'}" alt="battle logo"/>
   <h2>
     Battlefield 4
   </h2>
@@ -8,6 +9,23 @@
     Win %: {{$ctrl.data.stats.extra.wlr || N/A}} <br />
     Kills: {{$ctrl.data.stats.kills || N/A}} <br />  
     K/D: {{$ctrl.data.stats.extra.kdr || N/A}} <br /> 
+
+    <button type="submit" ng-click="submit()" style="background-color: whitesmoke; color: black; margin: 0% 0px 0px 80%" class="btn btn-primary">
+      Show More Stats
+    </button>
+    <div ng-show="myValue" style="font-size: 150%">
+      Avenger Kills: {{$ctrl.data.stats.avengerKills || N/A}} <br />
+      Deaths: {{$ctrl.data.stats.deaths || N/A}} <br />
+      Losses: {{$ctrl.data.stats.numLosses || N/A}} <br />
+      Headshots: {{$ctrl.data.stats.headshots || N/A}} <br />
+      Revives: {{$ctrl.data.stats.revives || N/A}} <br />
+      Shots Fired: {{$ctrl.data.stats.shotsFired || N/A}} <br />
+      Longest Headshot: {{$ctrl.data.stats.longestHeadshot || N/A}} <br />
+      Score Per Minute: {{$ctrl.data.stats.extra.spm || N/A}} <br />
+      Vehicle Kills: {{$ctrl.data.stats.extra.vehicleKills || N/A}} <br />
+      Total Medals: {{$ctrl.data.stats.extra.medalsTotal || N/A}} <br />
+    </div>
+    <div ng-show="myValue" class="ng-hide"></div>
   </p>
-  <img ng-src="{{imgAddress}}" ng-style="{'width':'500px', 'margin':'-450px 0px -200px 600px'}" alt="battle logo"/>
+
   </div>

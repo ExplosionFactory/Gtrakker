@@ -1,14 +1,31 @@
 <div class="jumbotron">
+  <img ng-src="{{imgAddress}}" ng-style="{'width':'200px', 'margin':'0% 0% -20% 74%'}" alt="cod logo"/>    <p>
   <h2>
     BLOPS 4
   </h2>
   <p>
-  Prestige : {{$ctrl.data[0].displayValue || N/A}} <br />
-  KD Ratio : {{$ctrl.data[1].displayValue || N/A}} <br />
-  Kills : {{$ctrl.data[2].displayValue || N/A}} <br />
-  Deaths : {{$ctrl.data[3].displayValue || N/A}} <br />
-  Wins : {{$ctrl.data[15].displayValue || N/A}} <br />
-  Losses : {{$ctrl.data[16].displayValue || N/A}} <br />
+  Prestige: {{$ctrl.data[0].displayValue || N/A}} <br />
+  KD Ratio: {{$ctrl.data[1].displayValue || N/A}} <br />
+  Kills: {{$ctrl.data[2].displayValue || N/A}} <br />
+  Deaths: {{$ctrl.data[3].displayValue || N/A}} <br />
+  W/L %: {{$ctrl.data[15].displayValue || N/A}} <br />
+  Wins: {{$ctrl.data[16].displayValue || N/A}} <br />
+
+  <button type="submit" ng-click="submit()" style="background-color: whitesmoke; color: black; margin: 0% 0px 0px 80%" class="btn btn-primary">
+    Show More Stats
+  </button>
+    <div ng-show="myValue" style="font-size: 150%">
+      Deaths: {{$ctrl.data[4].displayValue || N/A}} <br />
+      Assists: {{$ctrl.data[5].displayValue || N/A}} <br />
+      Melee Kills: {{$ctrl.data[6].displayValue || N/A}} <br />
+      Confirmed Kills: {{$ctrl.data[8].displayValue || N/A}} <br />
+      Denied Kills: {{$ctrl.data[9].displayValue || N/A}} <br />
+      Total Games Played: {{$ctrl.data[14].displayValue || N/A}} <br />
+      Losses: {{$ctrl.data[17].displayValue || N/A}} <br />
+      Total Time Played: {{$ctrl.data[19].displayValue || N/A}} <br />
+      Score Per Minute: {{$ctrl.data[24].displayValue || N/A}} <br />
+      Headshots: {{$ctrl.data[27].displayValue || N/A}} <br />
+    </div>
+    <div ng-show="myValue" class="ng-hide"></div>
   </p>
-  <img ng-src="{{imgAddress}}" ng-style="{'width':'200px', 'margin':'-450px 0px -200px 800px'}" alt="cod logo"/>    <p>
   </div>
