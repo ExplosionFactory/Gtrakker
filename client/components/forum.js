@@ -6,6 +6,10 @@ angular.module('gtrak')
     },
     templateUrl: 'templates/codforum.html',
   }).controller('forumCtrl', function ($scope, $location, $http) {
+    this.data = {}
+    $http.get('/forum').then((messages) => {
+      this.data = messages.data;
+    });
     $scope.submit = () => {
       $http.post('/forum',{mess:$scope.message}).then(() =>{
         console.log('posted')

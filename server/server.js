@@ -22,12 +22,22 @@ app.use(session({
     path: '/',
   },
 }));
+app.get('/forum', (req, res) => {
+  db.findMsgByGame('general').then((messages) => {
+    console.log(messages);
+    res.send(messages);
+    res.end();
+  }).catch((err) => {
+    res.send(err);
+    res.end();
+  });
+});
 app.post('/forum',(req,res) =>{
   const userMessage = req.body.mess;
   const userName = req.session.user;
   const room = 'general';
-  db.saveMsg({ game: room, name: userName, message: userMessage });
-  res.send('ok');
+  db.saveMsg({ game: room, name: userName, message: userMessage })
+  res.end();
 });
 app.post('/signup', (req, res) => {
   db.getUserbyUsername(req.body.loginName).then((user) => {

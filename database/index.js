@@ -53,7 +53,7 @@ const saveMsg = (dataObj) => {
 };
 
 const findMsgByGame = (findGame) => {
-  Message.find({ game: findGame }, (err, docs) => {
+  return Message.find({ game: findGame }, (err, docs) => {
     if (err) {
       console.log(err);
     } else {

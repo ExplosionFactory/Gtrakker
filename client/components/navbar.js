@@ -1,18 +1,19 @@
 /* eslint-disable no-undef */
 /* eslint-disable prefer-arrow-callback */
 angular.module('gtrak')
+  .component('navbar', {
     bindings: {
       search: '<',
     },
     templateUrl: 'templates/navbar.html',
-  }).controller('navCtrl',($scope, $http, $location) => {
+  }).controller('navCtrl', function navCtrl($scope, $http, $location) {
     $scope.imageAddress = '../../images/gtrakker_logo.png';
     $scope.myValue = false;
     $scope.account = () => {
       $location.path('/account');
     };
     $scope.logout = () => {
-      $http.post('/end').then((data) => {
+      $http.post('/end').then(() => {
         $location.path('/splash');
       });
     };
