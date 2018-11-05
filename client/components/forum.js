@@ -7,6 +7,7 @@ angular.module('gtrak')
     templateUrl: 'templates/forum.html',
   }).controller('forumCtrl', function ($scope, $location, $http, $window) {
     $scope.imageAddress = '../../images/gtrakker_logo.png';
+    $scope.bgAddress = '../../images/chatbg.png';
     $http.get('/loggedin').then((data) => {
       if (data.data === '') {
         $location.path('/splash');

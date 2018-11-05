@@ -1,16 +1,9 @@
 <!-- navbar -->
-<div class="row" ng-controller="navCtrl">
+<div class="row" ng-controller="navCtrl" style="background-image: url({{banAddress}}); background-size: 100%; margin: 0px 0px 0px 0px">
     <div class="col-md-12">
-      <div class="page-header">
-        <img ng-src="{{imageAddress}}" ng-style="{'width': '400px','margin': '-50px 10px 5px 650px'}" alt="logo"/> <br />
-
-        <div ng-show="myValue" style="color: red"><h4>User not found</h4></div>
-        <div ng-show="myValue" class="ng-hide"></div>
-
-        <h4 style="color: whitesmoke; margin: 0px 0px 0px 10px">
-          Search for friend's stats
-        </h4>
-        <input type="text" ng-model="searchUser" style="margin: 0px 0px 0px 10px"/>
+      <div>
+        <img ng-src="{{imageAddress}}" ng-style="{'width': '400px','margin': '20px 10px 5px 650px'}" alt="logo"/> <br />
+        <input type="text" ng-model="searchUser" placeholder="Search for friends" style="margin: 0px 0px 0px 10px"/>
         <button type="button" ng-click="$ctrl.search(searchUser)" style="background-color: whitesmoke; color: black; margin: 2px 5px 5px 10px; max-width: 300px" class="btn">
           Search
         </button>
