@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable no-console */
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
@@ -66,28 +67,31 @@ const getUserbyUsername = name => User.findOne({ loginName: name });
 const deleteByUsername = name => User.findOne({ loginName: name }).remove().exec();
 
 const updateByUsernameBattle = (name, user, plat) => {
-  User.updateOne(
-    { loginName: name },
-    { $set: { battlefield: { platform: plat, username: user } } },
-  );
+  User.findOneAndUpdate({ loginName: name }, { $set: { battlefield: { platform: plat, username: user } } }, { new: true }, (err, doc) => {
+    if (err) { console.log(err); }
+    console.log(`${doc} has been changed`);
+  });
 };
+
 const updateByUsernameFort = (name, user, plat) => {
-  User.updateOne(
-    { loginName: name },
-    { $set: { fortnite: { platform: plat, username: user } } },
-  );
+  User.findOneAndUpdate({ loginName: name }, { $set: { fortnite: { platform: plat, username: user } } }, { new: true }, (err, doc) => {
+    if (err) { console.log(err); }
+    console.log(`${doc} has been changed`);
+  });
 };
+
 const updateByUsernameCod = (name, user, plat) => {
-  User.updateOne(
-    { loginName: name },
-    { $set: { cod: { platform: plat, username: user } } },
-  );
+  User.findOneAndUpdate({ loginName: name }, { $set: { cod: { platform: plat, username: user } } }, { new: true }, (err, doc) => {
+    if (err) { console.log(err); }
+    console.log(`${doc} has been changed`);
+  });
 };
+
 const updateByUsernameOverwatch = (name, user) => {
-  User.updateOne(
-    { loginName: name },
-    { $set: { overwatch: { username: user } } },
-  );
+  User.findOneAndUpdate({ loginName: name }, { $set: { overwatch: { username: user } } }, { new: true }, (err, doc) => {
+    if (err) { console.log(err); }
+    console.log(`${doc} has been changed`);
+  });
 };
 
 module.exports.save = save;

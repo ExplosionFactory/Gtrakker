@@ -16,8 +16,8 @@ angular.module('gtrak')
       $location.path('/delete');
     };
     $scope.submit = () => {
-      $http.post("/update", {game: $scope.updateGame, user: $scope.updateName, platform: $scope.updatePlat });
-      console.log('game', $scope.updateGame, 'user', $scope.updateName, 'plat', $scope.updatePlat);
+      $http.post('/update', { game: $scope.updateGame, user: $scope.updateName, platform: $scope.updatePlat });
+      console.log('game:', $scope.updateGame, 'user:', $scope.updateName, 'plat:', $scope.updatePlat);
     };
     $scope.back = () => {
       $location.path('/app');
