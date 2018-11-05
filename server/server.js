@@ -50,11 +50,23 @@ app.post('/update', (req, res) => {
     res.end();
   }
 });
-app.get('/delete', (req, res) => {
-  console.log(req.session.user);
-  const username = req.session.user;
-  db.deleteByUsername(username);
-  res.end();
+app.post('/delete', (req, res) => {
+  const username = req.session.user
+  const password = req.body.password
+  db.getUserbyUsername(username).then((user) => {
+    bcrypt.compare(password, user.loginPass, (err, resolve) => {
+      if (err) {
+        console.log(err);
+      } else if (resolve) {
+        console.log(req.session.user);
+        const username = req.session.user;
+        db.deleteByUsername(username);
+        req.session.destroy();
+        res.end();
+      }
+    });
+  });
+
 });
 
 app.post('/end', (req, res) => {

@@ -7,6 +7,11 @@ angular.module('gtrak')
     },
     templateUrl: 'templates/settings.html',
   }).controller('accountCtrl', function ($http, $location, $scope) {
+    $http.get('/loggedin').then((data) => {
+      if (data.data === '') {
+        $location.path('/splash');
+      }
+    });
     $scope.delete = () => {
       $location.path('/delete');
     };

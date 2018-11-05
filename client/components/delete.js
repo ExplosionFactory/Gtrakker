@@ -3,10 +3,15 @@ angular.module('gtrak')
     bindings: {
     },
     templateUrl: 'templates/delete.html',
-  }).controller('deleteCtrl', function ($http, $location, $scope){
+  }).controller('deleteCtrl', function ($http, $location, $scope) {
+    $http.get('/loggedin').then((data) => {
+      if (data.data === '') {
+        $location.path('/splash');
+      }
+    });
     $scope.delete = () => {
     console.log("delete")
-    $http.get('/delete').then(() => {
+    $http.post('/delete',{ password :$scope.loginPassword }).then(() => {
       $location.path('/splash');
     });
     };
